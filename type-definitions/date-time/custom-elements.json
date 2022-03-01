@@ -1,0 +1,496 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/create-date-time.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CreateDateTime",
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"time\"",
+              "attribute": "fieldName"
+            },
+            {
+              "kind": "field",
+              "name": "relativeTime",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "relative-time"
+            },
+            {
+              "kind": "field",
+              "name": "picker",
+              "type": {
+                "text": "DateTimePicker"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "static": true
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"time\"",
+              "fieldName": "fieldName"
+            },
+            {
+              "name": "relative-time",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "relativeTime"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "ScopedElementsMixin",
+              "package": "@open-wc/scoped-elements"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CreateDateTime",
+          "declaration": {
+            "name": "CreateDateTime",
+            "module": "src/create-date-time.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/date-time-detail.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DateTimeDetail",
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "relativeTime",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "relativeTime"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "value"
+            },
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "static": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "relativeTime",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "relativeTime"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "value"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "ScopedElementsMixin",
+              "package": "@open-wc/scoped-elements"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DateTimeDetail",
+          "declaration": {
+            "name": "DateTimeDetail",
+            "module": "src/date-time-detail.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/generators.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "tsGenerator",
+          "type": {
+            "text": "TypescriptTypeGenerator"
+          },
+          "default": "{\n  imports: [],\n  defineType: '',\n  referenceType: 'number',\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "rustGenerator",
+          "type": {
+            "text": "RustTypeGenerator"
+          },
+          "default": "{\n  imports: [],\n  defineType: '',\n  referenceType: 'usize',\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "tsGenerator",
+          "declaration": {
+            "name": "tsGenerator",
+            "module": "src/generators.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "rustGenerator",
+          "declaration": {
+            "name": "rustGenerator",
+            "module": "src/generators.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "dateTimeType",
+          "type": {
+            "text": "TypeDefinition<number, DateTimeConfig>"
+          },
+          "default": "{\n  name: \"Date and Time\",\n  description: \"A point in time\",\n\n  configurationSchema: {\n    properties: {\n      relativeTime: {\n        description: \"Display in relative time\",\n        type: \"boolean\",\n        default: false,\n      },\n    },\n  },\n  sample: () => Date.now(),\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "elementImports",
+          "type": {
+            "text": "TypeElementsImportDeclarations"
+          },
+          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        \"@type-craft/date-time/create-date-time\"\n      ),\n      packageName: \"@type-craft/date-time\",\n      version: \"0.0.1\",\n    },\n    tagName: \"create-date-time\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        \"@type-craft/date-time/date-time-detail\"\n      ),\n      packageName: \"@type-craft/date-time\",\n      version: \"0.0.1\",\n    },\n    tagName: \"date-time-detail\",\n  },\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "\"./generators\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "dateTimeType",
+          "declaration": {
+            "name": "dateTimeType",
+            "module": "src/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "elementImports",
+          "declaration": {
+            "name": "elementImports",
+            "module": "src/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/definitions/create-date-time.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CDT",
+          "superclass": {
+            "name": "CreateDateTime",
+            "module": "/src/create-date-time"
+          },
+          "tagName": "create-date-time",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"time\"",
+              "fieldName": "fieldName",
+              "inheritedFrom": {
+                "name": "CreateDateTime",
+                "module": "src/create-date-time.ts"
+              }
+            },
+            {
+              "name": "relative-time",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "relativeTime",
+              "inheritedFrom": {
+                "name": "CreateDateTime",
+                "module": "src/create-date-time.ts"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"time\"",
+              "attribute": "fieldName",
+              "inheritedFrom": {
+                "name": "CreateDateTime",
+                "module": "src/create-date-time.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "relativeTime",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "relative-time",
+              "inheritedFrom": {
+                "name": "CreateDateTime",
+                "module": "src/create-date-time.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "picker",
+              "type": {
+                "text": "DateTimePicker"
+              },
+              "inheritedFrom": {
+                "name": "CreateDateTime",
+                "module": "src/create-date-time.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "inheritedFrom": {
+                "name": "CreateDateTime",
+                "module": "src/create-date-time.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "static": true,
+              "inheritedFrom": {
+                "name": "CreateDateTime",
+                "module": "src/create-date-time.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              },
+              "inheritedFrom": {
+                "name": "CreateDateTime",
+                "module": "src/create-date-time.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "create-date-time",
+          "declaration": {
+            "name": "CDT",
+            "module": "src/definitions/create-date-time.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/definitions/date-time-detail.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DTD",
+          "superclass": {
+            "name": "DateTimeDetail",
+            "module": "/src/date-time-detail"
+          },
+          "tagName": "date-time-detail",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "relativeTime",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "relativeTime",
+              "inheritedFrom": {
+                "name": "DateTimeDetail",
+                "module": "src/date-time-detail.ts"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "value",
+              "inheritedFrom": {
+                "name": "DateTimeDetail",
+                "module": "src/date-time-detail.ts"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "DateTimeDetail",
+                "module": "src/date-time-detail.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "relativeTime",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "attribute": "relativeTime",
+              "inheritedFrom": {
+                "name": "DateTimeDetail",
+                "module": "src/date-time-detail.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "number"
+              },
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "DateTimeDetail",
+                "module": "src/date-time-detail.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "static": true,
+              "inheritedFrom": {
+                "name": "DateTimeDetail",
+                "module": "src/date-time-detail.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "date-time-detail",
+          "declaration": {
+            "name": "DTD",
+            "module": "src/definitions/date-time-detail.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

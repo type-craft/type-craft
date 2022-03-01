@@ -1,6 +1,6 @@
 {
   "name": "@type-craft/date-time",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TypeCraft date type",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
@@ -42,5 +42,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "type": "module"
+  "type": "module",
+  "customElements": "custom-elements.json"
 }
