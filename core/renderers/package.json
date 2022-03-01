@@ -1,29 +1,29 @@
 {
-  "name": "@type-craft/vocabulary",
+  "name": "@type-craft/renderers",
   "version": "0.0.1",
-  "description": "Core protocols for all type-craft types",
+  "description": "Vocabulary definitions to render type-craft types",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
+
   "scripts": {
     "start": "tsc -w",
-    "build": "rimraf dist && tsc",
+    "build": "tsc",
     "build:watch": "tsc -w --preserveWatchOutput"
+  },
+  "dependencies": {
+    "@type-craft/vocabulary": "^0.0.1"
   },
   "devDependencies": {
     "rimraf": "^3.0.2",
     "typescript": "^4.4.3"
   },
-  "dependencies": {
-    "@types/json-schema": "^7.0.9",
-    "lodash-es": "^4.17.21"
-  },
-  "files": [
-    "dist"
-  ],
   "type": "module"
 }

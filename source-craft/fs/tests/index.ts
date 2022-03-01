@@ -1,5 +1,5 @@
 import test from 'tape';
-import { readFolder, applyPatch, directoryToGenerator } from '../dist';
+import { readFolder, writeDirectoryTree, directoryToGenerator } from '../dist';
 import path from 'path';
 import { ScDirectory, ScFile } from '@source-craft/types';
 
@@ -11,11 +11,11 @@ test('read the ScDirectory for this package', async t => {
   const d = readFolder(`${__dirname}/../`);
   t.equal(5, Object.keys(d.children).length);
 
-  applyPatch(`${__dirname}/.fixture`, d);
+  writeDirectoryTree(`${__dirname}/.fixture`, d);
 
   ((d.children['src'] as ScDirectory).children['index.ts'] as ScFile).content += 'hello';
 
-  applyPatch(`${__dirname}/.fixture`, d);
+  writeDirectoryTree(`${__dirname}/.fixture`, d);
 });
 
 test('generate a generator for this package', async t => {
@@ -28,5 +28,5 @@ test('generate a generator for this package', async t => {
     },
   ]);
 
-  applyPatch(`${__dirname}/.generator`, generator);
+  writeDirectoryTree(`${__dirname}/.generator`, generator);
 });

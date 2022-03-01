@@ -1,6 +1,6 @@
 {
   "name": "@type-craft/crafting",
-  "description": "Webcomponent type-craft-workbench following open-wc recommendations",
+  "description": "Custom Elements to craft type-craft types",
   "license": "MIT",
   "author": "guillem.cordoba@gmail.com",
   "version": "0.0.1",
@@ -8,7 +8,8 @@
   "module": "dist/index.js",
   "exports": {
     ".": "./dist/index.js",
-    "./craft-type": "./dist/definitions/craft-type.js"
+    "./craft-type": "./dist/definitions/craft-type.js",
+    "./craft-fields": "./dist/definitions/craft-fields.js"
   },
   "scripts": {
     "analyze": "cem analyze --litelement",
@@ -58,13 +59,7 @@
         "error"
       ],
       "import/no-unresolved": "off",
-      "import/extensions": [
-        "error",
-        "always",
-        {
-          "ignorePackages": true
-        }
-      ]
+      "import/extensions": "off"
     }
   },
   "prettier": {
@@ -81,5 +76,8 @@
       "eslint --fix",
       "prettier --write"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

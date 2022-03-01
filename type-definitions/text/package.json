@@ -6,6 +6,12 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./dist/index.js",
     "./create-title": "./dist/definitions/create-title.js",
@@ -25,14 +31,11 @@
   "dependencies": {
     "@open-wc/scoped-elements": "^2.0.1",
     "@scoped-elements/material-web": "^0.0.16",
-    "@type-craft/elements-imports": "^0.0.1",
+    "@type-craft/web-components": "^0.0.1",
     "@type-craft/typescript": "^0.0.1",
     "@type-craft/rust": "^0.0.1",
     "@type-craft/vocabulary": "^0.0.1",
     "lit": "^2.1.3"
   },
-  "files": [
-    "dist"
-  ],
   "type": "module"
 }

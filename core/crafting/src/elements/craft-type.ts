@@ -1,5 +1,5 @@
-import { html, css, LitElement, TemplateResult } from 'lit';
-import { property, query, state } from 'lit/decorators.js';
+import { html, css, LitElement } from 'lit';
+import { property, query } from 'lit/decorators.js';
 import { ScopedElementsMixin } from '@open-wc/scoped-elements';
 import {
   Button,
@@ -16,10 +16,8 @@ import {
   Vocabulary,
 } from '@type-craft/vocabulary';
 
-import { dateType } from '@type-craft/date';
 import { JsonSchemaForm } from './json-schema-form';
 import { CraftFields } from './craft-fields';
-import { defaultTypes } from './default-type-definitions';
 
 export class CraftType extends ScopedElementsMixin(LitElement) {
   @property({ type: Object }) vocabulary!: Vocabulary;

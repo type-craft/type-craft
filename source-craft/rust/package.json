@@ -1,11 +1,14 @@
 {
   "name": "@source-craft/rust",
   "version": "0.0.1",
-  "description": "Common types for the client and the server to communicate with each other",
+  "description": "Common utilities to manage rust projects and their source code",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "tsc -w",
     "build": "rimraf dist && tsc",

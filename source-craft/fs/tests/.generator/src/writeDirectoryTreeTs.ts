@@ -1,8 +1,16 @@
-import { ScDirectory, ScNodeType } from '@source-craft/types';
+import { ScFile, ScNodeType } from '@source-craft/types';
+import camelCase from 'lodash-es/camelCase';
+import kebabCase from 'lodash-es/kebabCase';
+import upperFirst from 'lodash-es/upperFirst';
+import snakeCase from 'lodash-es/snakeCase';
+
+export const writeDirectoryTreeTs = (): ScFile => ({
+  type: ScNodeType.File,
+  content: `import { ScDirectory, ScNodeType } from '@source-craft/types';
 import { readdirSync, writeFileSync, mkdirSync, existsSync, rmSync, rmdirSync } from 'fs';
 import { isDirectory } from './utils';
 
-export function applyPatch(sourcePath: string, targetFs: ScDirectory): void {
+export function writeDirectoryTree(sourcePath: string, targetFs: ScDirectory): void {
   if (!existsSync(sourcePath)) {
     mkdirSync(sourcePath);
   }
@@ -11,10 +19,10 @@ export function applyPatch(sourcePath: string, targetFs: ScDirectory): void {
 
   // Create and overwrite dirs and files
   for (const [childPath, child] of Object.entries(targetFs.children)) {
-    const fullChildPath = `${sourcePath}/${childPath}`;
+    const fullChildPath = \`\${sourcePath}/\${childPath}\`;
 
     if (child.type === ScNodeType.Directory) {
-      applyPatch(fullChildPath, child);
+      writeDirectoryTree(fullChildPath, child);
     } else {
       writeFileSync(fullChildPath, child.content);
     }
@@ -31,3 +39,6 @@ export function applyPatch(sourcePath: string, targetFs: ScDirectory): void {
     }
   }
 }
+`
+});
+    

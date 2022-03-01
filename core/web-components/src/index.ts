@@ -1,17 +1,17 @@
 import { NpmImport } from '@source-craft/npm';
 
-export type VocabularyElementsImports = Record<string, TypeElementsImports>;
+export type VocabularyElementsImportDeclarations = Record<string, TypeElementsImportDeclarations>;
 
 export interface CustomElementImport {
   sideEffectImport: NpmImport;
   tagName: string;
 }
 
-export interface TypeElementsImports {
+export interface TypeElementsImportDeclarations {
   create: CustomElementImport;
   detail: CustomElementImport;
 }
 
-export function getAllImports(renderersImports: TypeElementsImports): NpmImport[] {
+export function getAllImports(renderersImports: TypeElementsImportDeclarations): NpmImport[] {
   return [renderersImports.create.sideEffectImport, renderersImports.detail.sideEffectImport];
 }

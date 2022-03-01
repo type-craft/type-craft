@@ -1,7 +1,7 @@
 import { ScFile, ScNodeType } from '@source-craft/types';
 import { uniq, flattenDeep, flatten, upperFirst, camelCase } from 'lodash-es';
 import { getAllChildrenTypes, Vocabulary, TypeDefinition, FieldDefinition } from '@type-craft/vocabulary';
-import { printTypescript } from '@source-craft/web-apps';
+import { printTypescript } from '@source-craft/npm';
 import ts from 'typescript';
 
 import { VocabularyTypescriptGenerators, TypescriptTypeGenerator } from './types';

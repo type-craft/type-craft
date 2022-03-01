@@ -1,6 +1,6 @@
 import { TypeDefinition } from '@type-craft/vocabulary';
-import { TypeElementsImports } from '@type-craft/elements-imports';
-import { importDeclaration } from '@source-craft/web-apps';
+import { TypeElementsImportDeclarations } from '@type-craft/web-components';
+import { importDeclaration } from '@source-craft/npm';
 import { DateConfig } from './types';
 
 export const dateType: TypeDefinition<number, DateConfig> = {
@@ -19,7 +19,7 @@ export const dateType: TypeDefinition<number, DateConfig> = {
   sample: () => Date.now(),
 };
 
-export const elementImports: TypeElementsImports = {
+export const elementImports: TypeElementsImportDeclarations = {
   create: {
     sideEffectImport: {
       importDeclaration: importDeclaration('@type-craft/date/create-date'),
@@ -30,10 +30,10 @@ export const elementImports: TypeElementsImports = {
   },
   detail: {
     sideEffectImport: {
-      importDeclaration: importDeclaration('@type-craft/date/show-date'),
+      importDeclaration: importDeclaration('@type-craft/date/date-detail'),
       packageName: '@type-craft/date',
       version: '0.0.1',
     },
-    tagName: 'show-date',
+    tagName: 'date-detail',
   },
 };

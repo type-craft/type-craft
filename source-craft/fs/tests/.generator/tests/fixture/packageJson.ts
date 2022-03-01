@@ -1,4 +1,12 @@
-{
+import { ScFile, ScNodeType } from '@source-craft/types';
+import camelCase from 'lodash-es/camelCase';
+import kebabCase from 'lodash-es/kebabCase';
+import upperFirst from 'lodash-es/upperFirst';
+import snakeCase from 'lodash-es/snakeCase';
+
+export const packageJson = (): ScFile => ({
+  type: ScNodeType.File,
+  content: `{
   "name": "@source-craft/fs",
   "version": "0.0.1",
   "description": "Common utilities to manage the filesystem with source-craft's types",
@@ -6,9 +14,6 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "start": "tsc -w",
     "build": "tsc",
@@ -34,3 +39,6 @@
   ],
   "type": "module"
 }
+`
+});
+    
