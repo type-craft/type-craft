@@ -1,0 +1,416 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/content-detail.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ContentDetail",
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "fieldName"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "value"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "fieldName"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "value"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "ScopedElementsMixin",
+              "package": "@open-wc/scoped-elements"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ContentDetail",
+          "declaration": {
+            "name": "ContentDetail",
+            "module": "src/content-detail.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/create-content.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CreateContent",
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Content\"",
+              "attribute": "fieldName"
+            },
+            {
+              "kind": "field",
+              "name": "contentField",
+              "type": {
+                "text": "TextArea"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "static": true
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Content\"",
+              "fieldName": "fieldName"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "ScopedElementsMixin",
+              "package": "@open-wc/scoped-elements"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CreateContent",
+          "declaration": {
+            "name": "CreateContent",
+            "module": "src/create-content.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/generators.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "tsGenerator",
+          "type": {
+            "text": "TypescriptTypeGenerator"
+          },
+          "default": "{\n  imports: [],\n  defineType: '',\n  referenceType: 'string',\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "rustGenerator",
+          "type": {
+            "text": "RustTypeGenerator"
+          },
+          "default": "{\n  imports: [],\n  defineType: '',\n  referenceType: 'String',\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "tsGenerator",
+          "declaration": {
+            "name": "tsGenerator",
+            "module": "src/generators.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "rustGenerator",
+          "declaration": {
+            "name": "rustGenerator",
+            "module": "src/generators.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "contentType",
+          "type": {
+            "text": "TypeDefinition<string, void>"
+          },
+          "default": "{\n  name: \"Content\",\n  description: \"\",\n\n  sample: () => `Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nMaecenas aliquam, elit ac interdum gravida, leo odio accumsan augue, ut \nvehicula ex elit vel est. Phasellus rutrum tortor a nunc euismod malesuada.\nSuspendisse potenti. Nulla aliquet, eros vitae feugiat vehicula, nibh odio mattis \npurus, ac interdum augue risus non justo. Maecenas sed volutpat urna. Aenean nec \nante tellus. Mauris in urna ac lorem bibendum egestas tincidunt nec odio. Donec\nsit amet elit nisl. Integer eleifend non ipsum rutrum viverra. Phasellus faucibus\narcu id dolor elementum volutpat. Donec tincidunt finibus nunc, et elementum erat\npellentesque id. Nam dictum rutrum pellentesque. Phasellus sollicitudin lectus\nvitae lobortis elementum. Donec vestibulum quam eget accumsan hendrerit.`,\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "elementImports",
+          "type": {
+            "text": "TypeElementsImportDeclarations"
+          },
+          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        \"@type-craft/content/create-content\"\n      ),\n      packageName: \"@type-craft/content\",\n      version: \"0.0.1\",\n    },\n    tagName: \"create-content\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        \"@type-craft/content/content-detail\"\n      ),\n      packageName: \"@type-craft/content\",\n      version: \"0.0.1\",\n    },\n    tagName: \"content-detail\",\n  },\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "\"./generators\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "contentType",
+          "declaration": {
+            "name": "contentType",
+            "module": "src/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "elementImports",
+          "declaration": {
+            "name": "elementImports",
+            "module": "src/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/definitions/content-detail.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CD",
+          "superclass": {
+            "name": "ContentDetail",
+            "module": "/src/content-detail"
+          },
+          "tagName": "content-detail",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "fieldName",
+              "inheritedFrom": {
+                "name": "ContentDetail",
+                "module": "src/content-detail.ts"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "value",
+              "inheritedFrom": {
+                "name": "ContentDetail",
+                "module": "src/content-detail.ts"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "fieldName",
+              "inheritedFrom": {
+                "name": "ContentDetail",
+                "module": "src/content-detail.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "ContentDetail",
+                "module": "src/content-detail.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "content-detail",
+          "declaration": {
+            "name": "CD",
+            "module": "src/definitions/content-detail.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/definitions/create-content.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CC",
+          "superclass": {
+            "name": "CreateContent",
+            "module": "/src/create-content"
+          },
+          "tagName": "create-content",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Content\"",
+              "fieldName": "fieldName",
+              "inheritedFrom": {
+                "name": "CreateContent",
+                "module": "src/create-content.ts"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Content\"",
+              "attribute": "fieldName",
+              "inheritedFrom": {
+                "name": "CreateContent",
+                "module": "src/create-content.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "contentField",
+              "type": {
+                "text": "TextArea"
+              },
+              "inheritedFrom": {
+                "name": "CreateContent",
+                "module": "src/create-content.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "CreateContent",
+                "module": "src/create-content.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "static": true,
+              "inheritedFrom": {
+                "name": "CreateContent",
+                "module": "src/create-content.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              },
+              "inheritedFrom": {
+                "name": "CreateContent",
+                "module": "src/create-content.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "create-content",
+          "declaration": {
+            "name": "CC",
+            "module": "src/definitions/create-content.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

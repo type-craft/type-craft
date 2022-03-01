@@ -1,0 +1,416 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/create-title.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CreateTitle",
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Title\"",
+              "attribute": "fieldName"
+            },
+            {
+              "kind": "field",
+              "name": "titleField",
+              "type": {
+                "text": "TextField"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "static": true
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Title\"",
+              "fieldName": "fieldName"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "ScopedElementsMixin",
+              "package": "@open-wc/scoped-elements"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CreateTitle",
+          "declaration": {
+            "name": "CreateTitle",
+            "module": "src/create-title.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/generators.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "tsGenerator",
+          "type": {
+            "text": "TypescriptTypeGenerator"
+          },
+          "default": "{\n  imports: [],\n  defineType: '',\n  referenceType: 'string',\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "rustGenerator",
+          "type": {
+            "text": "RustTypeGenerator"
+          },
+          "default": "{\n  imports: [],\n  defineType: '',\n  referenceType: 'String',\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "tsGenerator",
+          "declaration": {
+            "name": "tsGenerator",
+            "module": "src/generators.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "rustGenerator",
+          "declaration": {
+            "name": "rustGenerator",
+            "module": "src/generators.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "titleType",
+          "type": {
+            "text": "TypeDefinition<string, {}>"
+          },
+          "default": "{\n  name: 'Title',\n  description: 'Title of the object',\n\n  sample: () => 'An amazing dinner',\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "elementImports",
+          "type": {
+            "text": "TypeElementsImportDeclarations"
+          },
+          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration('@type-craft/title/create-title'),\n      packageName: '@type-craft/title',\n      version: '0.0.1',\n    },\n    tagName: 'create-title',\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration('@type-craft/title/title-detail'),\n      packageName: '@type-craft/title',\n      version: '0.0.1',\n    },\n    tagName: 'title-detail',\n  },\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./generators"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "titleType",
+          "declaration": {
+            "name": "titleType",
+            "module": "src/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "elementImports",
+          "declaration": {
+            "name": "elementImports",
+            "module": "src/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/title-detail.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TitleDetail",
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "fieldName"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "value"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "fieldName"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "value"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "ScopedElementsMixin",
+              "package": "@open-wc/scoped-elements"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TitleDetail",
+          "declaration": {
+            "name": "TitleDetail",
+            "module": "src/title-detail.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/definitions/create-title.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CT",
+          "superclass": {
+            "name": "CreateTitle",
+            "module": "/src/create-title"
+          },
+          "tagName": "create-title",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Title\"",
+              "fieldName": "fieldName",
+              "inheritedFrom": {
+                "name": "CreateTitle",
+                "module": "src/create-title.ts"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Title\"",
+              "attribute": "fieldName",
+              "inheritedFrom": {
+                "name": "CreateTitle",
+                "module": "src/create-title.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "titleField",
+              "type": {
+                "text": "TextField"
+              },
+              "inheritedFrom": {
+                "name": "CreateTitle",
+                "module": "src/create-title.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "CreateTitle",
+                "module": "src/create-title.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "static": true,
+              "inheritedFrom": {
+                "name": "CreateTitle",
+                "module": "src/create-title.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              },
+              "inheritedFrom": {
+                "name": "CreateTitle",
+                "module": "src/create-title.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "create-title",
+          "declaration": {
+            "name": "CT",
+            "module": "src/definitions/create-title.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/definitions/title-detail.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TD",
+          "superclass": {
+            "name": "TitleDetail",
+            "module": "/src/title-detail"
+          },
+          "tagName": "title-detail",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "fieldName",
+              "inheritedFrom": {
+                "name": "TitleDetail",
+                "module": "src/title-detail.ts"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "value",
+              "inheritedFrom": {
+                "name": "TitleDetail",
+                "module": "src/title-detail.ts"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldName",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "fieldName",
+              "inheritedFrom": {
+                "name": "TitleDetail",
+                "module": "src/title-detail.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "TitleDetail",
+                "module": "src/title-detail.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "title-detail",
+          "declaration": {
+            "name": "TD",
+            "module": "src/definitions/title-detail.ts"
+          }
+        }
+      ]
+    }
+  ]
+}
