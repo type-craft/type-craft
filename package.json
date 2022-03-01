@@ -1,0 +1,21 @@
+{
+  "name": "@type-craft/root",
+  "version": "0.0.1",
+  "description": "",
+  "workspaces": [
+    "core",
+    "source-craft",
+    "type-definitions"
+  ],
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/type-craft/type-craft.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/type-craft/type-craft/issues"
+  },
+  "homepage": "https://github.com/type-craft/type-craft#readme"
+}
