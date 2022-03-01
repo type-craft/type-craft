@@ -12,7 +12,6 @@
   "publishConfig": {
     "access": "public"
   },
-
   "scripts": {
     "start": "tsc -w",
     "build": "tsc",

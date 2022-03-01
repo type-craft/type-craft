@@ -24,7 +24,6 @@
     "@open-wc/scoped-elements": "^2.0.1",
     "@scoped-elements/material-web": "^0.0.16",
     "@type-craft/vocabulary": "^0.0.1",
-    "@type-craft/date": "^0.0.1",
     "lit": "^2.0.2",
     "lodash-es": "^4.17.21"
   },
