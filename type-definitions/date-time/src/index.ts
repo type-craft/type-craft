@@ -1,10 +1,10 @@
 import { TypeDefinition } from '@type-craft/vocabulary';
 import { TypeElementsImportDeclarations } from '@type-craft/web-components';
 import { importDeclaration } from '@source-craft/npm';
-import { DateConfig } from './types';
+import { DateTimeConfig } from './types';
 
-export const dateType: TypeDefinition<number, DateConfig> = {
-  name: 'Date',
+export const dateTimeType: TypeDefinition<number, DateTimeConfig> = {
+  name: 'Date and Time',
   description: 'A point in time',
 
   configurationSchema: {
@@ -22,18 +22,18 @@ export const dateType: TypeDefinition<number, DateConfig> = {
 export const elementImports: TypeElementsImportDeclarations = {
   create: {
     sideEffectImport: {
-      importDeclaration: importDeclaration('@type-craft/date/create-date'),
-      packageName: '@type-craft/date',
+      importDeclaration: importDeclaration('@type-craft/date-time/create-date-time'),
+      packageName: '@type-craft/date-time',
       version: '0.0.1',
     },
-    tagName: 'create-date',
+    tagName: 'create-date-time',
   },
   detail: {
     sideEffectImport: {
-      importDeclaration: importDeclaration('@type-craft/date/date-detail'),
-      packageName: '@type-craft/date',
+      importDeclaration: importDeclaration('@type-craft/date-time/date-time-detail'),
+      packageName: '@type-craft/date-time',
       version: '0.0.1',
     },
-    tagName: 'date-detail',
+    tagName: 'date-time-detail',
   },
 };

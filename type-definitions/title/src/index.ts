@@ -13,16 +13,16 @@ export const titleType: TypeDefinition<string, {}> = {
 export const elementImports: TypeElementsImportDeclarations = {
   create: {
     sideEffectImport: {
-      importDeclaration: importDeclaration('@type-craft/text/create-title'),
-      packageName: '@type-craft/text',
+      importDeclaration: importDeclaration('@type-craft/title/create-title'),
+      packageName: '@type-craft/title',
       version: '0.0.1',
     },
     tagName: 'create-title',
   },
   detail: {
     sideEffectImport: {
-      importDeclaration: importDeclaration('@type-craft/text/title-detail'),
-      packageName: '@type-craft/text',
+      importDeclaration: importDeclaration('@type-craft/title/title-detail'),
+      packageName: '@type-craft/title',
       version: '0.0.1',
     },
     tagName: 'title-detail',

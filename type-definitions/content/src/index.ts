@@ -1,11 +1,11 @@
-import { TypeDefinition } from '@type-craft/vocabulary';
-import { TypeElementsImportDeclarations } from '@type-craft/web-components';
-import { importDeclaration } from '@source-craft/npm';
-export * from './generators'
+import { TypeDefinition } from "@type-craft/vocabulary";
+import { TypeElementsImportDeclarations } from "@type-craft/web-components";
+import { importDeclaration } from "@source-craft/npm";
+export * from "./generators";
 
 export const contentType: TypeDefinition<string, void> = {
-  name: 'Text Content',
-  description: '',
+  name: "Content",
+  description: "",
 
   sample: () => `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 Maecenas aliquam, elit ac interdum gravida, leo odio accumsan augue, ut 
@@ -22,18 +22,22 @@ vitae lobortis elementum. Donec vestibulum quam eget accumsan hendrerit.`,
 export const elementImports: TypeElementsImportDeclarations = {
   create: {
     sideEffectImport: {
-      importDeclaration: importDeclaration('@type-craft/text/create-content'),
-      packageName: '@type-craft/text',
-      version: '0.0.1',
+      importDeclaration: importDeclaration(
+        "@type-craft/content/create-content"
+      ),
+      packageName: "@type-craft/content",
+      version: "0.0.1",
     },
-    tagName: 'create-content',
+    tagName: "create-content",
   },
   detail: {
     sideEffectImport: {
-      importDeclaration: importDeclaration('@type-craft/text/content-detail'),
-      packageName: '@type-craft/text',
-      version: '0.0.1',
+      importDeclaration: importDeclaration(
+        "@type-craft/content/content-detail"
+      ),
+      packageName: "@type-craft/content",
+      version: "0.0.1",
     },
-    tagName: 'content-detail',
+    tagName: "content-detail",
   },
 };

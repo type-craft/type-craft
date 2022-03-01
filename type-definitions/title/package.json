@@ -1,7 +1,7 @@
 {
-  "name": "@type-craft/text",
+  "name": "@type-craft/title",
   "version": "0.0.1",
-  "description": "Title and Content types for type-craft",
+  "description": "TypeCraft title type",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -15,9 +15,7 @@
   "exports": {
     ".": "./dist/index.js",
     "./create-title": "./dist/definitions/create-title.js",
-    "./title-detail": "./dist/definitions/title-detail.js",
-    "./create-content": "./dist/definitions/create-content.js",
-    "./content-detail": "./dist/definitions/content-detail.js"
+    "./title-detail": "./dist/definitions/title-detail.js"
   },
   "scripts": {
     "start": "tsc -w",

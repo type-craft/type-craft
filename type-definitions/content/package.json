@@ -1,15 +1,21 @@
 {
-  "name": "@type-craft/date",
+  "name": "@type-craft/content",
   "version": "0.0.1",
-  "description": "Common types for the client and the server to communicate with each other",
+  "description": "TypeCraft content type",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./dist/index.js",
-    "./create-date": "./dist/definitions/create-date.js",
-    "./show-date": "./dist/definitions/show-date.js"
+    "./create-content": "./dist/definitions/create-content.js",
+    "./content-detail": "./dist/definitions/content-detail.js"
   },
   "scripts": {
     "start": "tsc -w",
@@ -23,15 +29,11 @@
   "dependencies": {
     "@open-wc/scoped-elements": "^2.0.1",
     "@scoped-elements/material-web": "^0.0.16",
-    "@scoped-elements/shoelace": "^0.0.8",
     "@type-craft/web-components": "^0.0.1",
     "@type-craft/typescript": "^0.0.1",
     "@type-craft/rust": "^0.0.1",
     "@type-craft/vocabulary": "^0.0.1",
     "lit": "^2.1.3"
   },
-  "files": [
-    "dist"
-  ],
   "type": "module"
 }

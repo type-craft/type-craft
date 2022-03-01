@@ -13,7 +13,7 @@
     "build": "npm run build:source-craft && npm run build:core && npm run build:type-definitions",
     "build:source-craft": "npm run build -w @source-craft/types -w @source-craft/fs -w @source-craft/rust -w @source-craft/npm",
     "build:core": "npm run build -w @type-craft/vocabulary -w @type-craft/web-components -w @type-craft/rust -w @type-craft/typescript -w @type-craft/crafting",
-    "build:type-definitions": "npm run build -w @type-craft/date -w @type-craft/text"
+    "build:type-definitions": "npm run build -w @type-craft/date -w @type-craft/title -w @type-craft/content"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/type-craft/type-craft/issues"
   },
-  "homepage": "https://github.com/type-craft/type-craft#readme"
+  "homepage": "https://github.com/type-craft/type-craft#readme",
+  "dependencies": {
+    "@vaadin/date-time-picker": "^23.0.0"
+  }
 }
