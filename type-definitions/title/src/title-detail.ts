@@ -1,9 +1,12 @@
-import { DetailElement } from '@type-craft/vocabulary';
-import { html, LitElement } from 'lit';
-import { property } from 'lit/decorators.js';
-import { ScopedElementsMixin } from '@open-wc/scoped-elements';
+import { DetailElement } from "@type-craft/vocabulary";
+import { html, LitElement } from "lit";
+import { property } from "lit/decorators.js";
+import { ScopedElementsMixin } from "@open-wc/scoped-elements";
 
-export class TitleDetail extends ScopedElementsMixin(LitElement) implements DetailElement<string, {}> {
+export class TitleDetail
+  extends ScopedElementsMixin(LitElement)
+  implements DetailElement<string, {}>
+{
   @property()
   fieldName: string;
 
@@ -11,8 +14,6 @@ export class TitleDetail extends ScopedElementsMixin(LitElement) implements Deta
   value!: string;
 
   render() {
-    return html`
-      <span>${this.value}</span>
-    `;
+    return html` <span style="font-size: 24px">${this.value}</span> `;
   }
 }
