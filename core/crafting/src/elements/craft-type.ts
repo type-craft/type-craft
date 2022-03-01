@@ -16,7 +16,6 @@ import {
   Vocabulary,
 } from '@type-craft/vocabulary';
 
-import { JsonSchemaForm } from './json-schema-form';
 import { CraftFields } from './craft-fields';
 
 export class CraftType extends ScopedElementsMixin(LitElement) {
@@ -60,10 +59,9 @@ export class CraftType extends ScopedElementsMixin(LitElement) {
           style="margin-top: 16px"
         ></mwc-textarea>
 
-        <span style="font-size: 18px">Fields</span>
+        <span style="font-size: 18px; margin-top: 16px;">Fields</span>
 
         <craft-fields
-          style="margin-top: 24px;"
           .vocabulary=${this.vocabulary}
         ></craft-fields>
       </div>
@@ -79,8 +77,7 @@ export class CraftType extends ScopedElementsMixin(LitElement) {
       'mwc-select': Select,
       'mwc-list-item': ListItem,
       'mwc-card': Card,
-      'mwc-icon-button': IconButton,
-      'json-schema-form': JsonSchemaForm,
+      'mwc-icon-button': IconButton
     };
   }
 

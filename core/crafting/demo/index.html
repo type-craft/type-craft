@@ -13,39 +13,26 @@
     />
   </head>
   <body>
-    <create-and-preview id="create"> </create-and-preview>
+    <div id="root"></div>
 
     <script type="module">
-      import { html, LitElement, render } from 'lit';
-      import { CreateTypeDefinition, PreviewCreateType } from '../dist';
+      import { html, render } from 'lit';
+      import { CraftType } from '../dist';
 
-      customElements.define('create-type-definition', CreateTypeDefinition);
-      customElements.define('preview-create-type', PreviewCreateType);
+      const vocabulary = {
+        Title: {
+          name: 'Title',
+          description: 'Title of the object',
 
-      customElements.define(
-        'create-and-preview',
-        class extends LitElement {
-          static get properties() {
-            return {
-              typeDef: undefined,
-            };
-          }
+          sample: () => 'An amazing dinner',
+        },
+      };
 
-          render() {
-            return html`
-              <create-type-definition
-                @change=${e => (this.typeDef = e.target.value)}
-              >
-              </create-type-definition>
-              ${this.typeDef
-                ? html`
-                    <preview-create-type .typeDef=${this.typeDef}>
-                    </preview-create-type>
-                  `
-                : html``}
-            `;
-          }
-        }
+      customElements.define('craft-type', CraftType);
+
+      render(
+        html` <craft-type .vocabulary=${vocabulary}> </craft-type> `,
+        document.getElementById('root')
       );
     </script>
   </body>

@@ -1,5 +1,5 @@
-import { html, css, LitElement, TemplateResult } from 'lit';
-import { property, query, state } from 'lit/decorators.js';
+import { html, css, LitElement } from 'lit';
+import { property } from 'lit/decorators.js';
 import { ScopedElementsMixin } from '@open-wc/scoped-elements';
 import {
   Button,
@@ -7,7 +7,6 @@ import {
   IconButton,
   ListItem,
   Select,
-  TextArea,
   TextField,
 } from '@scoped-elements/material-web';
 import {
@@ -22,15 +21,26 @@ import { UniqueFieldsController } from './unique-fields-controller';
 export class CraftFields extends ScopedElementsMixin(LitElement) {
   @property({ type: Object }) vocabulary!: Vocabulary;
 
+  _fieldsCount = 0;
+
   @property()
   fields: Array<FieldDefinition<any>> = [];
+
+  firstUpdated() {
+    if (this.fields.length === 0)
+      this.fields = [
+        {
+          configuration: {},
+          name: `new_field_${this._fieldsCount++}`,
+          type: Object.keys(this.vocabulary)[0],
+        },
+      ];
+  }
 
   uniqueFieldsController = new UniqueFieldsController(
     this,
     () => this.uniqueFields
   );
-
-  _fieldsCount = 0;
 
   get uniqueFields(): HTMLInputElement[] {
     return Array.from(
@@ -125,7 +135,7 @@ export class CraftFields extends ScopedElementsMixin(LitElement) {
           <mwc-button
             label="Add Field"
             icon="add"
-            @click=${(e: CustomEvent) => {
+            @click=${() => {
               this.fields = [
                 ...this.fields,
                 {

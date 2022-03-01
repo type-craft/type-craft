@@ -1,9 +1,8 @@
 import { ScopedElementsMixin } from '@open-wc/scoped-elements';
 import { Checkbox, Formfield, TextField } from '@scoped-elements/material-web';
-import { JSONSchema7, JSONSchema7Definition } from 'json-schema';
+import { JSONSchema7 } from 'json-schema';
 import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
-import { ref } from 'lit/directives/ref.js';
 
 export class JsonSchemaForm extends ScopedElementsMixin(LitElement) {
   @property({ type: Object }) schema!: JSONSchema7;
@@ -21,10 +20,10 @@ export class JsonSchemaForm extends ScopedElementsMixin(LitElement) {
     }
   }
 
-  renderProperty(propertyName: string, property: JSONSchema7) {
-    switch (property.type) {
+  renderProperty(propertyName: string, propertySchema: JSONSchema7) {
+    switch (propertySchema.type) {
       case 'boolean':
-        return html` <mwc-formfield .label=${property.description}>
+        return html` <mwc-formfield .label=${propertySchema.description}>
           <mwc-checkbox
             .checked=${this.value[propertyName]}
             @change=${(e: Event) => {
@@ -48,9 +47,9 @@ export class JsonSchemaForm extends ScopedElementsMixin(LitElement) {
               this.value[propertyName] = (e.target as TextField).value;
               this.dispatchEvent(new Event('change'));
             }}
-            .label=${property.description}
-            .min=${property.minimum}
-            .max=${property.maximum}
+            .label=${propertySchema.description}
+            .min=${propertySchema.minimum}
+            .max=${propertySchema.maximum}
           ></mwc-textfield>
         `;
     }

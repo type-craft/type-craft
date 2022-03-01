@@ -55,6 +55,9 @@
     ],
     "rules": {
       "no-unused-vars": "off",
+      "no-plusplus": "off",
+      "no-return-assign": "off",
+      "no-param-reassign": "off",
       "@typescript-eslint/no-unused-vars": [
         "error"
       ],

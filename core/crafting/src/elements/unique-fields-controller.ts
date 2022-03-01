@@ -19,7 +19,7 @@ export class UniqueFieldsController implements ReactiveController {
 
     for (let i = 0; i < this.currentFields.length; i++) {
       for (let j = 0; j < this.currentFields.length; j++) {
-        if (i != j) {
+        if (i !== j) {
           if (this.currentFields[i].value === this.currentFields[j].value) {
             this.currentFields[i].setCustomValidity(this.duplicatedMessage);
             this.currentFields[j].setCustomValidity(this.duplicatedMessage);
@@ -50,9 +50,8 @@ export class UniqueFieldsController implements ReactiveController {
 
     this.currentFields = fields;
 
-    setTimeout(()=> {
-
+    setTimeout(() => {
       this.checkDuplicates();
-    })
+    });
   }
 }
