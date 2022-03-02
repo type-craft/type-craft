@@ -6,7 +6,6 @@ import {
   TypeDefinition,
   FieldDefinition,
 } from "@type-craft/vocabulary";
-import ts from "typescript";
 
 import {
   VocabularyTypescriptGenerators,
@@ -16,7 +15,7 @@ import {
 export function generateTsTypesFile(
   vocabulary: Vocabulary,
   typeGenerators: VocabularyTypescriptGenerators,
-  types: Array<TypeDefinition<any, any>>
+  types: string[]
 ): ScFile {
   const allChildrenTypeNames = uniq(
     flattenDeep(types.map((t) => getAllChildrenTypes(vocabulary, t)))

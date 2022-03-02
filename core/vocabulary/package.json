@@ -1,6 +1,6 @@
 {
   "name": "@type-craft/vocabulary",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Core protocols for all TypeCraft types",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",

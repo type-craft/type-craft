@@ -12,12 +12,14 @@ export function defaultSample(vocabulary: Vocabulary, fields: Array<FieldDefinit
   return obj;
 }
 
-export function getAllChildrenTypes(vocabulary: Vocabulary, type: TypeDefinition<any, any>): string[] {
-  let childrenTypes: string[] = [type.name];
+export function getAllChildrenTypes(vocabulary: Vocabulary, type: string): string[] {
+  let childrenTypes: string[] = [type];
 
-  if (type.fields) {
-    for (const field of type.fields) {
-      const granchildren = getAllChildrenTypes(vocabulary, vocabulary[field.type]);
+  const fields = vocabulary[type].fields;
+
+  if (fields) {
+    for (const field of fields) {
+      const granchildren = getAllChildrenTypes(vocabulary, field.type);
 
       childrenTypes = [...childrenTypes, ...granchildren];
     }

@@ -12,7 +12,7 @@ import { VocabularyRustGenerators, RustTypeGenerator } from "./types";
 export function generateRustTypesFile(
   vocabulary: Vocabulary,
   typeGenerators: VocabularyRustGenerators,
-  types: Array<TypeDefinition<any, any>>
+  types: string[]
 ): ScFile {
   const allChildrenTypeNames = uniq(
     flattenDeep(types.map((t) => getAllChildrenTypes(vocabulary, t)))

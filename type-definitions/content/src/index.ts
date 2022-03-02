@@ -2,7 +2,7 @@ import { TypeDefinition } from "@type-craft/vocabulary";
 import { TypeElementsImportDeclarations } from "@type-craft/web-components";
 export * from "./generators";
 
-export const contentType: TypeDefinition<string, void> = {
+export const contentType: TypeDefinition<string, {}> = {
   name: "Content",
   description: "",
 

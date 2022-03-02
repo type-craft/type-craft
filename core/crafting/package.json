@@ -3,7 +3,7 @@
   "description": "Custom Elements to craft TypeCraft types",
   "license": "MIT",
   "author": "guillem.cordoba@gmail.com",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "exports": {
@@ -23,7 +23,7 @@
   "dependencies": {
     "@open-wc/scoped-elements": "^2.0.1",
     "@scoped-elements/material-web": "^0.0.16",
-    "@type-craft/vocabulary": "^0.0.1",
+    "@type-craft/vocabulary": "^0.0.2",
     "lit": "^2.0.2",
     "lodash-es": "^4.17.21"
   },
