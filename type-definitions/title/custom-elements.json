@@ -132,7 +132,7 @@
           "type": {
             "text": "TypeDefinition<string, {}>"
           },
-          "default": "{\n  name: 'Title',\n  description: 'Title of the object',\n\n  sample: () => 'An amazing dinner',\n}"
+          "default": "{\n  name: \"Title\",\n  description: \"Title of the object\",\n\n  sample: () => \"An amazing dinner\",\n}"
         },
         {
           "kind": "variable",
@@ -140,7 +140,7 @@
           "type": {
             "text": "TypeElementsImportDeclarations"
           },
-          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration('@type-craft/title/create-title'),\n      packageName: '@type-craft/title',\n      version: '0.0.1',\n    },\n    tagName: 'create-title',\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration('@type-craft/title/title-detail'),\n      packageName: '@type-craft/title',\n      version: '0.0.1',\n    },\n    tagName: 'title-detail',\n  },\n}"
+          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        `import '@type-craft/title/create-title'`\n      ),\n      packageName: \"@type-craft/title\",\n      version: \"^0.0.3\",\n    },\n    tagName: \"create-title\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        `import '@type-craft/title/title-detail'`\n      ),\n      packageName: \"@type-craft/title\",\n      version: \"^0.0.3\",\n    },\n    tagName: \"title-detail\",\n  },\n}"
         }
       ],
       "exports": [
@@ -149,7 +149,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./generators"
+            "package": "\"./generators\""
           }
         },
         {

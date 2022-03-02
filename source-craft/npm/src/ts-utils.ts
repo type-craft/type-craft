@@ -1,4 +1,4 @@
-import ts from 'typescript';
+import * as ts from 'typescript';
 
 export function parseTsCode(code: string): ts.NodeArray<ts.Statement> {
   const sourceFile = ts.createSourceFile('sample.ts', code, ts.ScriptTarget.ES2015, /*setParentNodes */ false);

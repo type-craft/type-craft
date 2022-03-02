@@ -1,6 +1,6 @@
 {
   "name": "@source-craft/npm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Common utilities to manage npm projects and their source code",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",

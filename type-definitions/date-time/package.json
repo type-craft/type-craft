@@ -1,6 +1,6 @@
 {
   "name": "@type-craft/date-time",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "TypeCraft date type",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
@@ -21,8 +21,8 @@
     "@open-wc/scoped-elements": "^2.0.1",
     "@scoped-elements/material-web": "^0.0.16",
     "@scoped-elements/shoelace": "^0.0.8",
-    "@type-craft/rust": "^0.0.1",
-    "@type-craft/typescript": "^0.0.1",
+    "@type-craft/rust": "^0.0.2",
+    "@type-craft/typescript": "^0.0.2",
     "@type-craft/vocabulary": "^0.0.1",
     "@type-craft/web-components": "^0.0.1",
     "lodash-es": "^4.17.21",

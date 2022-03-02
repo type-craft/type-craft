@@ -23,20 +23,20 @@ export const elementImports: TypeElementsImportDeclarations = {
   create: {
     sideEffectImport: {
       importDeclaration: importDeclaration(
-        "@type-craft/content/create-content"
+        `import '@type-craft/content/create-content'`
       ),
       packageName: "@type-craft/content",
-      version: "0.0.1",
+      version: "0.0.2",
     },
     tagName: "create-content",
   },
   detail: {
     sideEffectImport: {
       importDeclaration: importDeclaration(
-        "@type-craft/content/content-detail"
+        `import '@type-craft/content/content-detail'`
       ),
       packageName: "@type-craft/content",
-      version: "0.0.1",
+      version: "0.0.2",
     },
     tagName: "content-detail",
   },

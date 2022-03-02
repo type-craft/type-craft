@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@type-craft/vocabulary": "^0.0.1",
-    "@source-craft/npm": "^0.0.1"
+    "@source-craft/npm": "^0.0.2"
   },
   "devDependencies": {
     "rimraf": "^3.0.2",

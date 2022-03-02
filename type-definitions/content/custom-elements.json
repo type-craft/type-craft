@@ -206,7 +206,7 @@
           "type": {
             "text": "TypeElementsImportDeclarations"
           },
-          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        \"@type-craft/content/create-content\"\n      ),\n      packageName: \"@type-craft/content\",\n      version: \"0.0.1\",\n    },\n    tagName: \"create-content\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        \"@type-craft/content/content-detail\"\n      ),\n      packageName: \"@type-craft/content\",\n      version: \"0.0.1\",\n    },\n    tagName: \"content-detail\",\n  },\n}"
+          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        `import '@type-craft/content/create-content'`\n      ),\n      packageName: \"@type-craft/content\",\n      version: \"0.0.2\",\n    },\n    tagName: \"create-content\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        `import '@type-craft/content/content-detail'`\n      ),\n      packageName: \"@type-craft/content\",\n      version: \"0.0.2\",\n    },\n    tagName: \"content-detail\",\n  },\n}"
         }
       ],
       "exports": [
