@@ -1,21 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2018",
     "module": "esnext",
-    "moduleResolution": "node",
-    "noEmitOnError": true,
-    "lib": ["es2017", "dom"],
-    "strict": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "outDir": "dist",
+    "target": "es2020",
     "sourceMap": true,
-    "inlineSources": true,
-    "rootDir": "src",
+    "baseUrl": "src",
     "declaration": true,
-    "incremental": true
+    "declarationDir": "dist",
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "incremental": true,
+    "outDir": "dist",
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules/**/*", "dist", "tests"]
 }

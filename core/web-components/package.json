@@ -1,7 +1,7 @@
 {
   "name": "@type-craft/web-components",
-  "version": "0.0.1",
-  "description": "Common definitions to generate web-components from type-craft types",
+  "version": "0.0.2",
+  "description": "Common definitions to generate web-components from TypeCraft types",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
   "module": "dist/index.js",

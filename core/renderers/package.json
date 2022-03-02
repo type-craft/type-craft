@@ -1,7 +1,7 @@
 {
   "name": "@type-craft/renderers",
   "version": "0.0.1",
-  "description": "Vocabulary definitions to render type-craft types",
+  "description": "Vocabulary definitions to render TypeCraft types",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
   "module": "dist/index.js",

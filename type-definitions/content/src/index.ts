@@ -1,6 +1,5 @@
 import { TypeDefinition } from "@type-craft/vocabulary";
 import { TypeElementsImportDeclarations } from "@type-craft/web-components";
-import { importDeclaration } from "@source-craft/npm";
 export * from "./generators";
 
 export const contentType: TypeDefinition<string, void> = {
@@ -22,9 +21,7 @@ vitae lobortis elementum. Donec vestibulum quam eget accumsan hendrerit.`,
 export const elementImports: TypeElementsImportDeclarations = {
   create: {
     sideEffectImport: {
-      importDeclaration: importDeclaration(
-        `import '@type-craft/content/create-content'`
-      ),
+      importDeclaration: `import '@type-craft/content/create-content'`,
       packageName: "@type-craft/content",
       version: "0.0.2",
     },
@@ -32,9 +29,7 @@ export const elementImports: TypeElementsImportDeclarations = {
   },
   detail: {
     sideEffectImport: {
-      importDeclaration: importDeclaration(
-        `import '@type-craft/content/content-detail'`
-      ),
+      importDeclaration: `import '@type-craft/content/content-detail'`,
       packageName: "@type-craft/content",
       version: "0.0.2",
     },

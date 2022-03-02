@@ -1,7 +1,5 @@
-import * as ts from 'typescript';
-
 export interface NpmImport {
-  importDeclaration: ts.ImportDeclaration;
+  importDeclaration: string;
 
   packageName: string;
   version: string;

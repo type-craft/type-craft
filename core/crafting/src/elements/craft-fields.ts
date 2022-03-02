@@ -27,7 +27,7 @@ export class CraftFields extends ScopedElementsMixin(LitElement) {
   fields: Array<FieldDefinition<any>> = [];
 
   firstUpdated() {
-    if (this.fields.length === 0)
+    if (this.fields.length === 0 && Object.keys(this.vocabulary).length > 0)
       this.fields = [
         {
           configuration: {},
@@ -57,7 +57,7 @@ export class CraftFields extends ScopedElementsMixin(LitElement) {
   }
 
   renderField(field: FieldDefinition<any>, index: number) {
-    const typeDefs = Object.values(this.vocabulary);
+    const typeDefs = Object.entries(this.vocabulary);
     return html`
       <div class="column" style="margin-top: 16px;">
         <div class="row" style="align-items: start">
@@ -80,7 +80,7 @@ export class CraftFields extends ScopedElementsMixin(LitElement) {
             style="width: 12em; margin-right: 8px"
             label="Field Type"
             @selected=${(e: CustomEvent) => {
-              field.type = typeDefs[e.detail.index].name;
+              field.type = typeDefs[e.detail.index][0] as string;
               this.requestUpdate();
               this.dispatchEvent(new Event('change'));
             }}
@@ -89,9 +89,9 @@ export class CraftFields extends ScopedElementsMixin(LitElement) {
               t =>
                 html`
                   <mwc-list-item
-                    .value=${t.name}
-                    .selected=${t.name === field.type}
-                    >${t.name}</mwc-list-item
+                    .value=${t[1].name}
+                    .selected=${t[0] === field.type}
+                    >${t[1].name}</mwc-list-item
                   >
                 `
             )}

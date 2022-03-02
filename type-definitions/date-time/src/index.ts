@@ -1,6 +1,5 @@
 import { TypeDefinition } from "@type-craft/vocabulary";
 import { TypeElementsImportDeclarations } from "@type-craft/web-components";
-import { importDeclaration } from "@source-craft/npm";
 import { DateTimeConfig } from "./types";
 export * from "./generators";
 
@@ -23,9 +22,7 @@ export const dateTimeType: TypeDefinition<number, DateTimeConfig> = {
 export const elementImports: TypeElementsImportDeclarations = {
   create: {
     sideEffectImport: {
-      importDeclaration: importDeclaration(
-        `import '@type-craft/date-time/create-date-time'`
-      ),
+      importDeclaration: `import '@type-craft/date-time/create-date-time'`,
       packageName: "@type-craft/date-time",
       version: "0.0.3",
     },
@@ -33,9 +30,7 @@ export const elementImports: TypeElementsImportDeclarations = {
   },
   detail: {
     sideEffectImport: {
-      importDeclaration: importDeclaration(
-        `import '@type-craft/date-time/date-time-detail'`
-      ),
+      importDeclaration: `import '@type-craft/date-time/date-time-detail'`,
       packageName: "@type-craft/date-time",
       version: "0.0.3",
     },

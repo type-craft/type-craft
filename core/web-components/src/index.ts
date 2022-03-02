@@ -1,6 +1,9 @@
-import { NpmImport } from '@source-craft/npm';
+import { NpmImport } from "@source-craft/npm";
 
-export type VocabularyElementsImportDeclarations = Record<string, TypeElementsImportDeclarations>;
+export type VocabularyElementsImportDeclarations = Record<
+  string,
+  TypeElementsImportDeclarations
+>;
 
 export interface CustomElementImport {
   sideEffectImport: NpmImport;
@@ -8,10 +11,19 @@ export interface CustomElementImport {
 }
 
 export interface TypeElementsImportDeclarations {
-  create: CustomElementImport;
-  detail: CustomElementImport;
+  create?: CustomElementImport;
+  detail?: CustomElementImport;
 }
 
-export function getAllImports(renderersImports: TypeElementsImportDeclarations): NpmImport[] {
-  return [renderersImports.create.sideEffectImport, renderersImports.detail.sideEffectImport];
+export function getAllImports(
+  renderersImports: TypeElementsImportDeclarations
+): NpmImport[] {
+  const imports = [];
+
+  if (renderersImports.create.sideEffectImport)
+    imports.push(renderersImports.create.sideEffectImport);
+  if (renderersImports.detail.sideEffectImport)
+    imports.push(renderersImports.detail.sideEffectImport);
+
+  return imports;
 }

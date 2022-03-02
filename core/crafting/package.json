@@ -1,9 +1,9 @@
 {
   "name": "@type-craft/crafting",
-  "description": "Custom Elements to craft type-craft types",
+  "description": "Custom Elements to craft TypeCraft types",
   "license": "MIT",
   "author": "guillem.cordoba@gmail.com",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "exports": {
@@ -30,12 +30,14 @@
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.17",
     "@open-wc/eslint-config": "^4.3.0",
+    "@rollup/plugin-commonjs": "^21.0.2",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
-    "@type-craft/content": "^0.0.1",
-    "@type-craft/date-time": "^0.0.1",
-    "@type-craft/title": "^0.0.1",
+    "@type-craft/content": "^0.0.2",
+    "@type-craft/date-time": "^0.0.3",
+    "@type-craft/title": "^0.0.3",
     "@web/dev-server": "^0.1.28",
+    "@web/dev-server-rollup": "^0.3.15",
     "concurrently": "^5.3.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
@@ -43,8 +45,9 @@
     "lint-staged": "^10.5.4",
     "prettier": "^2.4.1",
     "tslib": "^2.3.1",
-    "typescript": "^4.5.2"
+    "typescript": "^4.4.3"
   },
+  "type": "module",
   "customElements": "custom-elements.json",
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",

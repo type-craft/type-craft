@@ -13,9 +13,7 @@ export const titleType: TypeDefinition<string, {}> = {
 export const elementImports: TypeElementsImportDeclarations = {
   create: {
     sideEffectImport: {
-      importDeclaration: importDeclaration(
-        `import '@type-craft/title/create-title'`
-      ),
+      importDeclaration: `import '@type-craft/title/create-title'`,
       packageName: "@type-craft/title",
       version: "^0.0.3",
     },
@@ -23,9 +21,7 @@ export const elementImports: TypeElementsImportDeclarations = {
   },
   detail: {
     sideEffectImport: {
-      importDeclaration: importDeclaration(
-        `import '@type-craft/title/title-detail'`
-      ),
+      importDeclaration: `import '@type-craft/title/title-detail'`,
       packageName: "@type-craft/title",
       version: "^0.0.3",
     },

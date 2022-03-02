@@ -1,7 +1,7 @@
 {
   "name": "@type-craft/vocabulary",
   "version": "0.0.1",
-  "description": "Core protocols for all type-craft types",
+  "description": "Core protocols for all TypeCraft types",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "tsc -w",
-    "build": "rimraf dist && tsc",
+    "build": "tsc",
     "build:watch": "tsc -w --preserveWatchOutput"
   },
   "devDependencies": {

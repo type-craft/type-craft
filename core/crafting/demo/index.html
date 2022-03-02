@@ -18,22 +18,25 @@
     <script type="module">
       import { html, render } from 'lit';
       import { titleType } from '@type-craft/title';
+      /* 
       import { contentType } from '@type-craft/content';
-      import { dateTimeType } from '@type-craft/date-time';
+      import { dateTimeType } from '@type-craft/date-time'; */
       import { CraftType } from '../dist';
-
+      
       const vocabulary = {
         Title: titleType,
+/* 
         Content: contentType,
         DateTime: dateTimeType,
-      };
+        */
+    }; 
 
-      customElements.define('craft-type', CraftType);
-
+    customElements.define('craft-type', CraftType);
+ 
       render(
         html` <craft-type .vocabulary=${vocabulary}> </craft-type> `,
         document.getElementById('root')
-      );
+      ); 
     </script>
   </body>
 </html>
