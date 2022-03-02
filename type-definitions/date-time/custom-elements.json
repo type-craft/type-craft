@@ -235,7 +235,7 @@
           "type": {
             "text": "TypeElementsImportDeclarations"
           },
-          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        `import '@type-craft/date-time/create-date-time'`\n      ),\n      packageName: \"@type-craft/date-time\",\n      version: \"0.0.3\",\n    },\n    tagName: \"create-date-time\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        `import '@type-craft/date-time/date-time-detail'`\n      ),\n      packageName: \"@type-craft/date-time\",\n      version: \"0.0.3\",\n    },\n    tagName: \"date-time-detail\",\n  },\n}"
+          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: `import '@type-craft/date-time/create-date-time';`,\n      packageName: \"@type-craft/date-time\",\n      version: \"0.0.4\",\n    },\n    tagName: \"create-date-time\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: `import '@type-craft/date-time/date-time-detail';`,\n      packageName: \"@type-craft/date-time\",\n      version: \"0.0.4\",\n    },\n    tagName: \"date-time-detail\",\n  },\n}"
         }
       ],
       "exports": [

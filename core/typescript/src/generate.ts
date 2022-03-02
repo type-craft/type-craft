@@ -6,7 +6,6 @@ import {
   TypeDefinition,
   FieldDefinition,
 } from "@type-craft/vocabulary";
-import { printTypescript } from "@source-craft/npm";
 import ts from "typescript";
 
 import {
@@ -42,7 +41,7 @@ export function generateTsTypesFile(
 
   return {
     type: ScNodeType.File,
-    content: `${printTypescript(ts.factory.createNodeArray(importDeclarations))}
+    content: `${importDeclarations.join("\n")}
 
 ${allDefineTypes}`,
   };

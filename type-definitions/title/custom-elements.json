@@ -140,7 +140,7 @@
           "type": {
             "text": "TypeElementsImportDeclarations"
           },
-          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        `import '@type-craft/title/create-title'`\n      ),\n      packageName: \"@type-craft/title\",\n      version: \"^0.0.3\",\n    },\n    tagName: \"create-title\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: importDeclaration(\n        `import '@type-craft/title/title-detail'`\n      ),\n      packageName: \"@type-craft/title\",\n      version: \"^0.0.3\",\n    },\n    tagName: \"title-detail\",\n  },\n}"
+          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: `import '@type-craft/title/create-title';`,\n      packageName: \"@type-craft/title\",\n      version: \"^0.0.4\",\n    },\n    tagName: \"create-title\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: `import '@type-craft/title/title-detail';`,\n      packageName: \"@type-craft/title\",\n      version: \"^0.0.4\",\n    },\n    tagName: \"title-detail\",\n  },\n}"
         }
       ],
       "exports": [

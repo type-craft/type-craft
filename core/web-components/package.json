@@ -1,6 +1,6 @@
 {
   "name": "@type-craft/web-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Common definitions to generate web-components from TypeCraft types",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@type-craft/vocabulary": "^0.0.1",
-    "@source-craft/npm": "^0.0.2"
+    "@source-craft/npm": "^0.0.3"
   },
   "devDependencies": {
     "rimraf": "^3.0.2",

@@ -22,17 +22,17 @@ export const dateTimeType: TypeDefinition<number, DateTimeConfig> = {
 export const elementImports: TypeElementsImportDeclarations = {
   create: {
     sideEffectImport: {
-      importDeclaration: `import '@type-craft/date-time/create-date-time'`,
+      importDeclaration: `import '@type-craft/date-time/create-date-time';`,
       packageName: "@type-craft/date-time",
-      version: "0.0.3",
+      version: "0.0.4",
     },
     tagName: "create-date-time",
   },
   detail: {
     sideEffectImport: {
-      importDeclaration: `import '@type-craft/date-time/date-time-detail'`,
+      importDeclaration: `import '@type-craft/date-time/date-time-detail';`,
       packageName: "@type-craft/date-time",
-      version: "0.0.3",
+      version: "0.0.4",
     },
     tagName: "date-time-detail",
   },

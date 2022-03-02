@@ -21,17 +21,17 @@ vitae lobortis elementum. Donec vestibulum quam eget accumsan hendrerit.`,
 export const elementImports: TypeElementsImportDeclarations = {
   create: {
     sideEffectImport: {
-      importDeclaration: `import '@type-craft/content/create-content'`,
+      importDeclaration: `import '@type-craft/content/create-content';`,
       packageName: "@type-craft/content",
-      version: "0.0.2",
+      version: "^0.0.3",
     },
     tagName: "create-content",
   },
   detail: {
     sideEffectImport: {
-      importDeclaration: `import '@type-craft/content/content-detail'`,
+      importDeclaration: `import '@type-craft/content/content-detail';`,
       packageName: "@type-craft/content",
-      version: "0.0.2",
+      version: "^0.0.3",
     },
     tagName: "content-detail",
   },
