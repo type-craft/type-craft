@@ -109,44 +109,46 @@ export class CraftFields extends ScopedElementsMixin(LitElement) {
             }}
             style="width: 12em; margin-right: 8px"
           ></mwc-textfield>
-          <mwc-select
-            .fixedMenuPosition=${true}
-            outlined
-            style="width: 12em; margin-right: 8px"
-            label="Field Type"
-            @selected=${(e: CustomEvent) => {
-              field.type = typeDefs[e.detail.index][0] as string;
-              this.requestUpdate();
-              this.dispatchEvent(new Event('change'));
-            }}
-          >
-            ${typeDefs.map(
-              t =>
-                html`
-                  <mwc-list-item
-                    .value=${t[1].name}
-                    .selected=${t[0] === field.type}
-                    >${t[1].name}</mwc-list-item
-                  >
-                `
-            )}
-          </mwc-select>
+          <div class="row" style="align-items: center">
+            <mwc-select
+              .fixedMenuPosition=${true}
+              outlined
+              style="width: 12em; margin-right: 8px"
+              label="Field Type"
+              @selected=${(e: CustomEvent) => {
+                field.type = typeDefs[e.detail.index][0] as string;
+                this.requestUpdate();
+                this.dispatchEvent(new Event('change'));
+              }}
+            >
+              ${typeDefs.map(
+                t =>
+                  html`
+                    <mwc-list-item
+                      .value=${t[1].name}
+                      .selected=${t[0] === field.type}
+                      >${t[1].name}</mwc-list-item
+                    >
+                  `
+              )}
+            </mwc-select>
 
-          <mwc-icon-button
-            icon="settings"
-            .disabled=${!this.getType(field.type).configurationSchema}
-            @click=${() => (this._selectedConfigFieldIndex = index)}
-          ></mwc-icon-button>
+            <mwc-icon-button
+              icon="settings"
+              .disabled=${!this.getType(field.type).configurationSchema}
+              @click=${() => (this._selectedConfigFieldIndex = index)}
+            ></mwc-icon-button>
 
-          <mwc-icon-button
-            icon="delete"
-            .disabled=${this.fields.length < 2}
-            @click=${() => {
-              this.fields.splice(index, 1);
-              this.requestUpdate();
-              this.dispatchEvent(new Event('change'));
-            }}
-          ></mwc-icon-button>
+            <mwc-icon-button
+              icon="delete"
+              .disabled=${this.fields.length < 2}
+              @click=${() => {
+                this.fields.splice(index, 1);
+                this.requestUpdate();
+                this.dispatchEvent(new Event('change'));
+              }}
+            ></mwc-icon-button>
+          </div>
         </div>
       </div>
     `;
