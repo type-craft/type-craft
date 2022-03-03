@@ -1,15 +1,17 @@
 import { html, css, LitElement } from 'lit';
-import { property } from 'lit/decorators.js';
+import { property, state } from 'lit/decorators.js';
 import { ScopedElementsMixin } from '@open-wc/scoped-elements';
 import {
   Button,
   Card,
   IconButton,
   ListItem,
+  Dialog,
   Select,
   TextField,
 } from '@scoped-elements/material-web';
 import {
+  ConfigurationSchema,
   FieldDefinition,
   TypeDefinition,
   Vocabulary,
@@ -25,6 +27,9 @@ export class CraftFields extends ScopedElementsMixin(LitElement) {
 
   @property()
   fields: Array<FieldDefinition<any>> = [];
+
+  @state()
+  _selectedConfigFieldIndex: number | undefined;
 
   firstUpdated() {
     if (this.fields.length === 0 && Object.keys(this.vocabulary).length > 0)
@@ -54,6 +59,36 @@ export class CraftFields extends ScopedElementsMixin(LitElement) {
 
   getType(type: string): TypeDefinition<any, any> {
     return this.vocabulary[type];
+  }
+
+  renderConfigDialog() {
+    if (this._selectedConfigFieldIndex === undefined) return html``;
+
+    const selectedField = this.fields[this._selectedConfigFieldIndex];
+
+    const fieldType = this.getType(selectedField.type);
+
+    return html`
+      <mwc-dialog
+        open
+        .heading=${`${fieldType.name} Configuration`}
+        @closed=${() => (this._selectedConfigFieldIndex = undefined)}
+      >
+        <json-schema-form
+          .value=${selectedField.configuration}
+          .schema=${fieldType.configurationSchema}
+          @change=${(e: Event) => {
+            selectedField.configuration = (e.target as JsonSchemaForm).value;
+            this.dispatchEvent(new Event('change'));
+          }}
+        ></json-schema-form>
+        <mwc-button
+          label="ok"
+          slot="primaryAction"
+          dialogAction="close"
+        ></mwc-button>
+      </mwc-dialog>
+    `;
   }
 
   renderField(field: FieldDefinition<any>, index: number) {
@@ -97,21 +132,11 @@ export class CraftFields extends ScopedElementsMixin(LitElement) {
             )}
           </mwc-select>
 
-          ${this.getType(field.type).configurationSchema
-            ? html`
-                <div class="column" style="flex: 1; margin-top: -8px">
-                  <span>Field Configuration</span>
-                  <json-schema-form
-                    .value=${field.configuration}
-                    .schema=${this.getType(field.type).configurationSchema}
-                    @change=${(e: Event) =>
-                      (field.configuration = (
-                        e.target as JsonSchemaForm
-                      ).value)}
-                  ></json-schema-form>
-                </div>
-              `
-            : html``}
+          <mwc-icon-button
+            icon="settings"
+            .disabled=${!this.getType(field.type).configurationSchema}
+            @click=${() => (this._selectedConfigFieldIndex = index)}
+          ></mwc-icon-button>
 
           <mwc-icon-button
             icon="delete"
@@ -129,6 +154,7 @@ export class CraftFields extends ScopedElementsMixin(LitElement) {
 
   render() {
     return html`
+      ${this.renderConfigDialog()}
       <div class="column">
         ${this.fields.map((f, i) => this.renderField(f, i))}
         <div>
@@ -157,6 +183,7 @@ export class CraftFields extends ScopedElementsMixin(LitElement) {
       'mwc-textfield': TextField,
       'mwc-button': Button,
       'mwc-select': Select,
+      'mwc-dialog': Dialog,
       'mwc-list-item': ListItem,
       'mwc-card': Card,
       'mwc-icon-button': IconButton,

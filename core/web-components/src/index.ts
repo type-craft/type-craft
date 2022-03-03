@@ -20,9 +20,9 @@ export function getAllImports(
 ): NpmImport[] {
   const imports = [];
 
-  if (renderersImports.create.sideEffectImport)
+  if (renderersImports.create)
     imports.push(renderersImports.create.sideEffectImport);
-  if (renderersImports.detail.sideEffectImport)
+  if (renderersImports.detail)
     imports.push(renderersImports.detail.sideEffectImport);
 
   return imports;

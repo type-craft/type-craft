@@ -10,5 +10,5 @@ export const tsGenerator: TypescriptTypeGenerator = {
 export const rustGenerator: RustTypeGenerator = {
   imports: [],
   defineType: '',
-  referenceType: 'usize',
+  referenceType: 'u64',
 };
