@@ -6,5 +6,5 @@ export interface CargoImport {
 }
 
 export function generateImports(imports: CargoImport[]): string {
-  return `${imports.map(cargoImport => cargoImport.importDeclaration).join('\n')}`;
+  return imports.map(cargoImport => cargoImport.importDeclaration).join('\n');
 }

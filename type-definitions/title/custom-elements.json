@@ -132,7 +132,7 @@
           "type": {
             "text": "TypeDefinition<string, {}>"
           },
-          "default": "{\n  name: \"Title\",\n  description: \"Title of the object\",\n\n  sample: () => \"An amazing dinner\",\n}"
+          "default": "{\n  name: \"Title\",\n  description: \"Title of the object\",\n\n  sample: () => lorem.generateWords(3),\n}"
         },
         {
           "kind": "variable",

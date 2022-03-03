@@ -1,6 +1,6 @@
 {
   "name": "@type-craft/date-time",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "TypeCraft date type",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",

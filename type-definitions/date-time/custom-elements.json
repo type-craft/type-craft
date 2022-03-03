@@ -195,7 +195,7 @@
           "type": {
             "text": "RustTypeGenerator"
           },
-          "default": "{\n  imports: [],\n  defineType: '',\n  referenceType: 'usize',\n}"
+          "default": "{\n  imports: [],\n  defineType: '',\n  referenceType: 'u64',\n}"
         }
       ],
       "exports": [

@@ -1,21 +1,24 @@
 import { TypeDefinition } from "@type-craft/vocabulary";
 import { TypeElementsImportDeclarations } from "@type-craft/web-components";
 export * from "./generators";
+import { LoremIpsum } from "lorem-ipsum";
+
+const lorem = new LoremIpsum({
+  sentencesPerParagraph: {
+    max: 8,
+    min: 4,
+  },
+  wordsPerSentence: {
+    max: 16,
+    min: 4,
+  },
+});
 
 export const contentType: TypeDefinition<string, {}> = {
   name: "Content",
   description: "",
 
-  sample: () => `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-Maecenas aliquam, elit ac interdum gravida, leo odio accumsan augue, ut 
-vehicula ex elit vel est. Phasellus rutrum tortor a nunc euismod malesuada.
-Suspendisse potenti. Nulla aliquet, eros vitae feugiat vehicula, nibh odio mattis 
-purus, ac interdum augue risus non justo. Maecenas sed volutpat urna. Aenean nec 
-ante tellus. Mauris in urna ac lorem bibendum egestas tincidunt nec odio. Donec
-sit amet elit nisl. Integer eleifend non ipsum rutrum viverra. Phasellus faucibus
-arcu id dolor elementum volutpat. Donec tincidunt finibus nunc, et elementum erat
-pellentesque id. Nam dictum rutrum pellentesque. Phasellus sollicitudin lectus
-vitae lobortis elementum. Donec vestibulum quam eget accumsan hendrerit.`,
+  sample: () => lorem.generateSentences(3),
 };
 
 export const elementImports: TypeElementsImportDeclarations = {

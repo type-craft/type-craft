@@ -198,7 +198,7 @@
           "type": {
             "text": "TypeDefinition<string, {}>"
           },
-          "default": "{\n  name: \"Content\",\n  description: \"\",\n\n  sample: () => `Lorem ipsum dolor sit amet, consectetur adipiscing elit. \nMaecenas aliquam, elit ac interdum gravida, leo odio accumsan augue, ut \nvehicula ex elit vel est. Phasellus rutrum tortor a nunc euismod malesuada.\nSuspendisse potenti. Nulla aliquet, eros vitae feugiat vehicula, nibh odio mattis \npurus, ac interdum augue risus non justo. Maecenas sed volutpat urna. Aenean nec \nante tellus. Mauris in urna ac lorem bibendum egestas tincidunt nec odio. Donec\nsit amet elit nisl. Integer eleifend non ipsum rutrum viverra. Phasellus faucibus\narcu id dolor elementum volutpat. Donec tincidunt finibus nunc, et elementum erat\npellentesque id. Nam dictum rutrum pellentesque. Phasellus sollicitudin lectus\nvitae lobortis elementum. Donec vestibulum quam eget accumsan hendrerit.`,\n}"
+          "default": "{\n  name: \"Content\",\n  description: \"\",\n\n  sample: () => lorem.generateSentences(3),\n}"
         },
         {
           "kind": "variable",

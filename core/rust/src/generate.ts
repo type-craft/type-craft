@@ -33,7 +33,10 @@ export function generateRustTypesFile(
   const allImports = generators.map((g) => g.imports);
   const imports = generateImports(flattenDeep(allImports));
 
-  const allDefineTypes = generators.map((g) => g.defineType).join("\n\n");
+  const allDefineTypes = generators
+    .map((g) => g.defineType)
+    .filter((g) => g !== undefined)
+    .join("\n\n");
 
   return {
     type: ScNodeType.File,
