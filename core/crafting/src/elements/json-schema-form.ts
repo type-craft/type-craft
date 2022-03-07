@@ -1,7 +1,7 @@
 import { ScopedElementsMixin } from '@open-wc/scoped-elements';
 import { Checkbox, Formfield, TextField } from '@scoped-elements/material-web';
 import { JSONSchema7 } from 'json-schema';
-import { html, LitElement, PropertyValues } from 'lit';
+import { html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 
 export class JsonSchemaForm extends ScopedElementsMixin(LitElement) {
@@ -10,24 +10,10 @@ export class JsonSchemaForm extends ScopedElementsMixin(LitElement) {
   @property({ type: Object })
   value: any = {};
 
-  updated(changed: PropertyValues) {
-    super.updated(changed);
-
-    if (changed.has('schema')) {
-      this.updateValuesWithDefault();
-    }
-  }
-
-  updateValuesWithDefault() {
-    this.value = {};
-    if (!this.schema || !this.schema.properties) return;
-
-    for (const [name, prop] of Object.entries(this.schema.properties)) {
-      if (!this.value[name]) {
-        this.value[name] = (prop as JSONSchema7).default;
-      }
-    }
-    this.requestUpdate();
+  valueForProperty(propertyName: string) {
+    return this.value[propertyName]
+      ? this.value[propertyName]
+      : (this.schema.properties[propertyName] as JSONSchema7).default;
   }
 
   renderProperty(propertyName: string, propertySchema: JSONSchema7) {
@@ -35,7 +21,7 @@ export class JsonSchemaForm extends ScopedElementsMixin(LitElement) {
       case 'boolean':
         return html` <mwc-formfield .label=${propertySchema.description}>
           <mwc-checkbox
-            .checked=${this.value[propertyName]}
+            .checked=${this.valueForProperty(propertyName)}
             @change=${(e: Event) => {
               this.value[propertyName] = (e.target as Checkbox).checked;
               this.dispatchEvent(
@@ -52,7 +38,7 @@ export class JsonSchemaForm extends ScopedElementsMixin(LitElement) {
           <mwc-textfield
             type="number"
             outlined
-            .value=${this.value[propertyName]}
+            .value=${this.valueForProperty(propertyName)}
             @input=${(e: Event) => {
               this.value[propertyName] = (e.target as TextField).value;
               this.dispatchEvent(new Event('change'));
@@ -66,7 +52,9 @@ export class JsonSchemaForm extends ScopedElementsMixin(LitElement) {
         return html`
           <mwc-textfield
             outlined
-            .value=${this.value[propertyName] || ''}
+            .value=${this.valueForProperty(propertyName)
+              ? this.valueForProperty(propertyName)
+              : ''}
             @input=${(e: Event) => {
               this.value[propertyName] = (e.target as TextField).value;
               this.dispatchEvent(new Event('change'));

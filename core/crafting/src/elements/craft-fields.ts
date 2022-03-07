@@ -11,7 +11,6 @@ import {
   TextField,
 } from '@scoped-elements/material-web';
 import {
-  ConfigurationSchema,
   FieldDefinition,
   TypeDefinition,
   Vocabulary,

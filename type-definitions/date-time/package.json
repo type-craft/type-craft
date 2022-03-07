@@ -1,6 +1,6 @@
 {
   "name": "@type-craft/date-time",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "TypeCraft date type",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
@@ -8,8 +8,8 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
-    "./create-date": "./dist/definitions/create-date.js",
-    "./date-detail": "./dist/definitions/date-detail.js"
+    "./create-date-time": "./dist/definitions/create-date-time.js",
+    "./date-time-detail": "./dist/definitions/date-time-detail.js"
   },
   "scripts": {
     "analyze": "cem analyze --litelement",
