@@ -13,12 +13,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "default": "\"time\"",
-              "attribute": "fieldName"
+              "default": "\"Pick a time\"",
+              "attribute": "label"
             },
             {
               "kind": "field",
@@ -58,12 +58,12 @@
           ],
           "attributes": [
             {
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "default": "\"time\"",
-              "fieldName": "fieldName"
+              "default": "\"Pick a time\"",
+              "fieldName": "label"
             },
             {
               "name": "relative-time",
@@ -108,10 +108,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
-              }
+              },
+              "default": "\"\"",
+              "attribute": "label"
             },
             {
               "kind": "field",
@@ -131,12 +133,28 @@
               "attribute": "value"
             },
             {
+              "kind": "method",
+              "name": "renderDate"
+            },
+            {
+              "kind": "method",
+              "name": "renderLabel"
+            },
+            {
               "kind": "field",
               "name": "scopedElements",
               "static": true
             }
           ],
           "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "label"
+            },
             {
               "name": "relativeTime",
               "type": {
@@ -227,7 +245,7 @@
           "type": {
             "text": "TypeDefinition<number, DateTimeConfig>"
           },
-          "default": "{\n  name: \"Date and Time\",\n  description: \"A point in time\",\n\n  configurationSchema: {\n    properties: {\n      relativeTime: {\n        description: \"Display in relative time\",\n        type: \"boolean\",\n        default: false,\n      },\n    },\n  },\n  sample: () => Date.now(),\n}"
+          "default": "{\n  name: \"Date and Time\",\n  description: \"A point in time\",\n\n  configurationSchema: {\n    properties: {\n      relativeTime: {\n        description: \"Display in relative time\",\n        type: \"boolean\",\n        default: false,\n      },\n      label: {\n        description: \"Label for the time\",\n        type: \"string\",\n        default: \"\",\n      },\n    },\n  },\n  sample: () => Date.now(),\n}"
         },
         {
           "kind": "variable",
@@ -287,12 +305,12 @@
           "customElement": true,
           "attributes": [
             {
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "default": "\"time\"",
-              "fieldName": "fieldName",
+              "default": "\"Pick a time\"",
+              "fieldName": "label",
               "inheritedFrom": {
                 "name": "CreateDateTime",
                 "module": "src/create-date-time.ts"
@@ -313,12 +331,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "default": "\"time\"",
-              "attribute": "fieldName",
+              "default": "\"Pick a time\"",
+              "attribute": "label",
               "inheritedFrom": {
                 "name": "CreateDateTime",
                 "module": "src/create-date-time.ts"
@@ -409,6 +427,18 @@
           "customElement": true,
           "attributes": [
             {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "label",
+              "inheritedFrom": {
+                "name": "DateTimeDetail",
+                "module": "src/date-time-detail.ts"
+              }
+            },
+            {
               "name": "relativeTime",
               "type": {
                 "text": "boolean"
@@ -435,10 +465,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
+              "default": "\"\"",
+              "attribute": "label",
               "inheritedFrom": {
                 "name": "DateTimeDetail",
                 "module": "src/date-time-detail.ts"
@@ -464,6 +496,22 @@
                 "text": "number"
               },
               "attribute": "value",
+              "inheritedFrom": {
+                "name": "DateTimeDetail",
+                "module": "src/date-time-detail.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderDate",
+              "inheritedFrom": {
+                "name": "DateTimeDetail",
+                "module": "src/date-time-detail.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLabel",
               "inheritedFrom": {
                 "name": "DateTimeDetail",
                 "module": "src/date-time-detail.ts"

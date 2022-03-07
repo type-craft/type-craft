@@ -9,7 +9,8 @@ export class DateTimeDetail
   extends ScopedElementsMixin(LitElement)
   implements DetailElement<number, DateTimeConfig>
 {
-  fieldName: string;
+  @property()
+  label = "";
 
   @property({ type: Boolean })
   relativeTime = false;
@@ -17,7 +18,7 @@ export class DateTimeDetail
   @property({ type: Number })
   value: number;
 
-  render() {
+  renderDate() {
     if (this.relativeTime)
       return html`<sl-relative-time
         .date=${new Date(this.value)}
@@ -35,6 +36,15 @@ export class DateTimeDetail
       ></sl-format-date
       ><br />
     `;
+  }
+
+  renderLabel() {
+    if (this.label) return html`${this.label}: `;
+    return html``;
+  }
+
+  render() {
+    return html`${this.renderLabel()}${this.renderDate()}`;
   }
 
   static get scopedElements() {

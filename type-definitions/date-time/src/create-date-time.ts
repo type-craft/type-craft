@@ -12,7 +12,7 @@ export class CreateDateTime
   implements CreateElement<number, DateTimeConfig>
 {
   @property()
-  fieldName = "time";
+  label = "Pick a time";
 
   @property({ type: Boolean, attribute: "relative-time" })
   relativeTime: boolean;
@@ -27,7 +27,7 @@ export class CreateDateTime
   render() {
     return html`
       <vaadin-date-time-picker
-        .label=${`Pick a ${startCase(this.fieldName)}`}
+        .label=${this.label}
         id="date-time-picker"
         @value-changed=${() => {
           if (this.value) {

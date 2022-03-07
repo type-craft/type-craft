@@ -14,6 +14,11 @@ export const dateTimeType: TypeDefinition<number, DateTimeConfig> = {
         type: "boolean",
         default: false,
       },
+      label: {
+        description: "Label for the time",
+        type: "string",
+        default: "",
+      },
     },
   },
   sample: () => Date.now(),
