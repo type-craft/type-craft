@@ -1,6 +1,6 @@
 import { TypeDefinition } from "@type-craft/vocabulary";
 import { TypeElementsImportDeclarations } from "@type-craft/web-components";
-import { TitleConfig } from "config";
+import { TitleConfig } from "./config";
 import jeffsum from 'jeffsum'
 
 export * from "./generators";
@@ -26,7 +26,7 @@ export const elementImports: TypeElementsImportDeclarations = {
     sideEffectImport: {
       importDeclaration: `import '@type-craft/title/create-title';`,
       packageName: "@type-craft/title",
-      version: "^0.0.7",
+      version: "^0.0.8",
     },
     tagName: "create-title",
   },
@@ -34,7 +34,7 @@ export const elementImports: TypeElementsImportDeclarations = {
     sideEffectImport: {
       importDeclaration: `import '@type-craft/title/title-detail';`,
       packageName: "@type-craft/title",
-      version: "^0.0.7",
+      version: "^0.0.8",
     },
     tagName: "title-detail",
   },
