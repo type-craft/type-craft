@@ -3,7 +3,7 @@
   "description": "Custom Elements to craft TypeCraft types",
   "license": "MIT",
   "author": "guillem.cordoba@gmail.com",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "exports": {
