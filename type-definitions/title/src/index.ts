@@ -1,26 +1,15 @@
 import { TypeDefinition } from "@type-craft/vocabulary";
 import { TypeElementsImportDeclarations } from "@type-craft/web-components";
 import { TitleConfig } from "config";
-import { LoremIpsum } from "lorem-ipsum";
+import jeffsum from 'jeffsum'
 
 export * from "./generators";
-
-const lorem = new LoremIpsum({
-  sentencesPerParagraph: {
-    max: 8,
-    min: 4,
-  },
-  wordsPerSentence: {
-    max: 16,
-    min: 4,
-  },
-});
 
 export const titleType: TypeDefinition<string,TitleConfig> = {
   name: "Title",
   description: "Title of the object",
 
-  sample: () => lorem.generateWords(3),
+  sample: () => jeffsum(3, 'words'),
   configurationSchema: {
     properties: {
       label: {

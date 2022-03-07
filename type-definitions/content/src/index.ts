@@ -2,24 +2,13 @@ import { TypeDefinition } from "@type-craft/vocabulary";
 import { TypeElementsImportDeclarations } from "@type-craft/web-components";
 import { ContentConfig } from "./config";
 export * from "./generators";
-import { LoremIpsum } from "lorem-ipsum";
-
-const lorem = new LoremIpsum({
-  sentencesPerParagraph: {
-    max: 8,
-    min: 4,
-  },
-  wordsPerSentence: {
-    max: 16,
-    min: 4,
-  },
-});
+import jeffsum from "jeffsum";
 
 export const contentType: TypeDefinition<string, ContentConfig> = {
   name: "Content",
   description: "",
 
-  sample: () => lorem.generateSentences(3),
+  sample: () => jeffsum(3, "sentences"),
   configurationSchema: {
     properties: {
       label: {

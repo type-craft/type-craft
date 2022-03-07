@@ -74,14 +74,16 @@ export class CraftFields extends ScopedElementsMixin(LitElement) {
         .heading=${`${fieldType.name} Configuration`}
         @closed=${() => (this._selectedConfigFieldIndex = undefined)}
       >
-        <json-schema-form
-          .value=${selectedField.configuration}
-          .schema=${fieldType.configurationSchema}
-          @change=${(e: Event) => {
-            selectedField.configuration = (e.target as JsonSchemaForm).value;
-            this.dispatchEvent(new Event('change'));
-          }}
-        ></json-schema-form>
+        <div class="column">
+          <json-schema-form
+            .value=${selectedField.configuration}
+            .schema=${fieldType.configurationSchema}
+            @change=${(e: Event) => {
+              selectedField.configuration = (e.target as JsonSchemaForm).value;
+              this.dispatchEvent(new Event('change'));
+            }}
+          ></json-schema-form>
+        </div>
         <mwc-button
           label="ok"
           slot="primaryAction"

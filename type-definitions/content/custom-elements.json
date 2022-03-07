@@ -206,7 +206,7 @@
           "type": {
             "text": "TypeDefinition<string, ContentConfig>"
           },
-          "default": "{\n  name: \"Content\",\n  description: \"\",\n\n  sample: () => lorem.generateSentences(3),\n  configurationSchema: {\n    properties: {\n      label: {\n        description: \"Label for the textarea\",\n        type: \"string\",\n        default: \"Content\",\n      },\n    },\n  },\n}"
+          "default": "{\n  name: \"Content\",\n  description: \"\",\n\n  sample: () => jeffsum(3, 'sentences'),\n  configurationSchema: {\n    properties: {\n      label: {\n        description: \"Label for the textarea\",\n        type: \"string\",\n        default: \"Content\",\n      },\n    },\n  },\n}"
         },
         {
           "kind": "variable",

@@ -138,7 +138,7 @@
           "type": {
             "text": "TypeDefinition<string,TitleConfig>"
           },
-          "default": "{\n  name: \"Title\",\n  description: \"Title of the object\",\n\n  sample: () => lorem.generateWords(3),\n  configurationSchema: {\n    properties: {\n      label: {\n        description: \"Label for the field\",\n        type: \"string\",\n        default: \"Title\",\n      },\n    },\n  },\n}"
+          "default": "{\n  name: \"Title\",\n  description: \"Title of the object\",\n\n  sample: () => jeffsum(3, 'words'),\n  configurationSchema: {\n    properties: {\n      label: {\n        description: \"Label for the field\",\n        type: \"string\",\n        default: \"Title\",\n      },\n    },\n  },\n}"
         },
         {
           "kind": "variable",

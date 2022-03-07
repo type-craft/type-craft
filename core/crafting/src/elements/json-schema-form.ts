@@ -1,7 +1,7 @@
 import { ScopedElementsMixin } from '@open-wc/scoped-elements';
 import { Checkbox, Formfield, TextField } from '@scoped-elements/material-web';
 import { JSONSchema7 } from 'json-schema';
-import { html, LitElement } from 'lit';
+import { html, LitElement, PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 
 export class JsonSchemaForm extends ScopedElementsMixin(LitElement) {
@@ -10,14 +10,24 @@ export class JsonSchemaForm extends ScopedElementsMixin(LitElement) {
   @property({ type: Object })
   value: any = {};
 
-  firstUpdated() {
-    if (!this.schema.properties) return;
+  updated(changed: PropertyValues) {
+    super.updated(changed);
+
+    if (changed.has('schema')) {
+      this.updateValuesWithDefault();
+    }
+  }
+
+  updateValuesWithDefault() {
+    this.value = {};
+    if (!this.schema || !this.schema.properties) return;
 
     for (const [name, prop] of Object.entries(this.schema.properties)) {
       if (!this.value[name]) {
         this.value[name] = (prop as JSONSchema7).default;
       }
     }
+    this.requestUpdate();
   }
 
   renderProperty(propertyName: string, propertySchema: JSONSchema7) {
@@ -52,18 +62,36 @@ export class JsonSchemaForm extends ScopedElementsMixin(LitElement) {
             .max=${propertySchema.maximum}
           ></mwc-textfield>
         `;
+      case 'string':
+        return html`
+          <mwc-textfield
+            outlined
+            .value=${this.value[propertyName] || ''}
+            @input=${(e: Event) => {
+              this.value[propertyName] = (e.target as TextField).value;
+              this.dispatchEvent(new Event('change'));
+            }}
+            .label=${propertySchema.description}
+          ></mwc-textfield>
+        `;
+      default:
+        return html``;
     }
-
-    return html``;
   }
 
   render() {
     if (!this.schema.properties) return html``;
 
     return html`
-      ${Object.entries(this.schema.properties).map(
-        ([name, p]) => typeof p === 'object' && this.renderProperty(name, p)
-      )}
+      <div style="display: flex; flex-direction: column">
+        ${Object.entries(this.schema.properties).map(
+          ([name, p]) =>
+            typeof p === 'object' &&
+            html`<div style="margin-top: 8px">
+              ${this.renderProperty(name, p)}
+            </div>`
+        )}
+      </div>
     `;
   }
 
