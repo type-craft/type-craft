@@ -4,6 +4,12 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "src/config.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/content-detail.ts",
       "declarations": [
         {
@@ -13,11 +19,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "attribute": "fieldName"
+              "default": "\"Content\"",
+              "attribute": "label"
             },
             {
               "kind": "field",
@@ -30,11 +37,12 @@
           ],
           "attributes": [
             {
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "fieldName": "fieldName"
+              "default": "\"Content\"",
+              "fieldName": "label"
             },
             {
               "name": "value",
@@ -79,12 +87,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
               "default": "\"Content\"",
-              "attribute": "fieldName"
+              "attribute": "label"
             },
             {
               "kind": "field",
@@ -116,12 +124,12 @@
           ],
           "attributes": [
             {
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
               "default": "\"Content\"",
-              "fieldName": "fieldName"
+              "fieldName": "label"
             }
           ],
           "mixins": [
@@ -196,9 +204,9 @@
           "kind": "variable",
           "name": "contentType",
           "type": {
-            "text": "TypeDefinition<string, {}>"
+            "text": "TypeDefinition<string, ContentConfig>"
           },
-          "default": "{\n  name: \"Content\",\n  description: \"\",\n\n  sample: () => lorem.generateSentences(3),\n}"
+          "default": "{\n  name: \"Content\",\n  description: \"\",\n\n  sample: () => lorem.generateSentences(3),\n  configurationSchema: {\n    properties: {\n      label: {\n        description: \"Label for the textarea\",\n        type: \"string\",\n        default: \"Content\",\n      },\n    },\n  },\n}"
         },
         {
           "kind": "variable",
@@ -206,7 +214,7 @@
           "type": {
             "text": "TypeElementsImportDeclarations"
           },
-          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: `import '@type-craft/content/create-content';`,\n      packageName: \"@type-craft/content\",\n      version: \"^0.0.3\",\n    },\n    tagName: \"create-content\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: `import '@type-craft/content/content-detail';`,\n      packageName: \"@type-craft/content\",\n      version: \"^0.0.3\",\n    },\n    tagName: \"content-detail\",\n  },\n}"
+          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: `import '@type-craft/content/create-content';`,\n      packageName: \"@type-craft/content\",\n      version: \"^0.0.7\",\n    },\n    tagName: \"create-content\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: `import '@type-craft/content/content-detail';`,\n      packageName: \"@type-craft/content\",\n      version: \"^0.0.7\",\n    },\n    tagName: \"content-detail\",\n  },\n}"
         }
       ],
       "exports": [
@@ -252,11 +260,12 @@
           "customElement": true,
           "attributes": [
             {
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "fieldName": "fieldName",
+              "default": "\"Content\"",
+              "fieldName": "label",
               "inheritedFrom": {
                 "name": "ContentDetail",
                 "module": "src/content-detail.ts"
@@ -277,11 +286,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "attribute": "fieldName",
+              "default": "\"Content\"",
+              "attribute": "label",
               "inheritedFrom": {
                 "name": "ContentDetail",
                 "module": "src/content-detail.ts"
@@ -329,12 +339,12 @@
           "customElement": true,
           "attributes": [
             {
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
               "default": "\"Content\"",
-              "fieldName": "fieldName",
+              "fieldName": "label",
               "inheritedFrom": {
                 "name": "CreateContent",
                 "module": "src/create-content.ts"
@@ -344,12 +354,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
               "default": "\"Content\"",
-              "attribute": "fieldName",
+              "attribute": "label",
               "inheritedFrom": {
                 "name": "CreateContent",
                 "module": "src/create-content.ts"

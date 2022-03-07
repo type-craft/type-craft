@@ -24,7 +24,7 @@ export const elementImports: TypeElementsImportDeclarations = {
     sideEffectImport: {
       importDeclaration: `import '@type-craft/date-time/create-date-time';`,
       packageName: "@type-craft/date-time",
-      version: "0.0.4",
+      version: "0.0.7",
     },
     tagName: "create-date-time",
   },
@@ -32,7 +32,7 @@ export const elementImports: TypeElementsImportDeclarations = {
     sideEffectImport: {
       importDeclaration: `import '@type-craft/date-time/date-time-detail';`,
       packageName: "@type-craft/date-time",
-      version: "0.0.4",
+      version: "0.0.7",
     },
     tagName: "date-time-detail",
   },

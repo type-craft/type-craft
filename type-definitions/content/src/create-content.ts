@@ -3,14 +3,15 @@ import { LitElement, html } from "lit";
 import { ScopedElementsMixin } from "@open-wc/scoped-elements";
 import { TextArea } from "@scoped-elements/material-web";
 import { property, query } from "lit/decorators.js";
-import startCase from 'lodash-es/startCase' 
+import startCase from "lodash-es/startCase";
+import { ContentConfig } from "./config";
 
 export class CreateContent
   extends ScopedElementsMixin(LitElement)
-  implements CreateElement<string, {}>
+  implements CreateElement<string, ContentConfig>
 {
   @property()
-  fieldName = "Content";
+  label = "Content";
 
   @query("#content-field")
   contentField!: TextArea;
@@ -24,7 +25,7 @@ export class CreateContent
       <mwc-textarea
         id="content-field"
         outlined
-        .label=${startCase(this.fieldName)}
+        .label=${this.label}
         @input=${() => this.dispatchEvent(new Event("change"))}
       ></mwc-textarea>
     `;

@@ -4,6 +4,12 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "src/config.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/create-title.ts",
       "declarations": [
         {
@@ -13,12 +19,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
               "default": "\"Title\"",
-              "attribute": "fieldName"
+              "attribute": "label"
             },
             {
               "kind": "field",
@@ -50,12 +56,12 @@
           ],
           "attributes": [
             {
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
               "default": "\"Title\"",
-              "fieldName": "fieldName"
+              "fieldName": "label"
             }
           ],
           "mixins": [
@@ -130,9 +136,9 @@
           "kind": "variable",
           "name": "titleType",
           "type": {
-            "text": "TypeDefinition<string, {}>"
+            "text": "TypeDefinition<string,TitleConfig>"
           },
-          "default": "{\n  name: \"Title\",\n  description: \"Title of the object\",\n\n  sample: () => lorem.generateWords(3),\n}"
+          "default": "{\n  name: \"Title\",\n  description: \"Title of the object\",\n\n  sample: () => lorem.generateWords(3),\n  configurationSchema: {\n    properties: {\n      label: {\n        description: \"Label for the field\",\n        type: \"string\",\n        default: \"Title\",\n      },\n    },\n  },\n}"
         },
         {
           "kind": "variable",
@@ -140,7 +146,7 @@
           "type": {
             "text": "TypeElementsImportDeclarations"
           },
-          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: `import '@type-craft/title/create-title';`,\n      packageName: \"@type-craft/title\",\n      version: \"^0.0.4\",\n    },\n    tagName: \"create-title\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: `import '@type-craft/title/title-detail';`,\n      packageName: \"@type-craft/title\",\n      version: \"^0.0.4\",\n    },\n    tagName: \"title-detail\",\n  },\n}"
+          "default": "{\n  create: {\n    sideEffectImport: {\n      importDeclaration: `import '@type-craft/title/create-title';`,\n      packageName: \"@type-craft/title\",\n      version: \"^0.0.7\",\n    },\n    tagName: \"create-title\",\n  },\n  detail: {\n    sideEffectImport: {\n      importDeclaration: `import '@type-craft/title/title-detail';`,\n      packageName: \"@type-craft/title\",\n      version: \"^0.0.7\",\n    },\n    tagName: \"title-detail\",\n  },\n}"
         }
       ],
       "exports": [
@@ -181,11 +187,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "attribute": "fieldName"
+              "default": "\"Title\"",
+              "attribute": "label"
             },
             {
               "kind": "field",
@@ -198,11 +205,12 @@
           ],
           "attributes": [
             {
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "fieldName": "fieldName"
+              "default": "\"Title\"",
+              "fieldName": "label"
             },
             {
               "name": "value",
@@ -252,12 +260,12 @@
           "customElement": true,
           "attributes": [
             {
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
               "default": "\"Title\"",
-              "fieldName": "fieldName",
+              "fieldName": "label",
               "inheritedFrom": {
                 "name": "CreateTitle",
                 "module": "src/create-title.ts"
@@ -267,12 +275,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
               "default": "\"Title\"",
-              "attribute": "fieldName",
+              "attribute": "label",
               "inheritedFrom": {
                 "name": "CreateTitle",
                 "module": "src/create-title.ts"
@@ -351,11 +359,12 @@
           "customElement": true,
           "attributes": [
             {
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "fieldName": "fieldName",
+              "default": "\"Title\"",
+              "fieldName": "label",
               "inheritedFrom": {
                 "name": "TitleDetail",
                 "module": "src/title-detail.ts"
@@ -376,11 +385,12 @@
           "members": [
             {
               "kind": "field",
-              "name": "fieldName",
+              "name": "label",
               "type": {
                 "text": "string"
               },
-              "attribute": "fieldName",
+              "default": "\"Title\"",
+              "attribute": "label",
               "inheritedFrom": {
                 "name": "TitleDetail",
                 "module": "src/title-detail.ts"

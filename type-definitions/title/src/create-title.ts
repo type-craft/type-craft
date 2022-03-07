@@ -4,13 +4,14 @@ import { ScopedElementsMixin } from "@open-wc/scoped-elements";
 import { TextField } from "@scoped-elements/material-web";
 import { property, query } from "lit/decorators.js";
 import startCase from "lodash-es/startCase";
+import { TitleConfig } from "config";
 
 export class CreateTitle
   extends ScopedElementsMixin(LitElement)
-  implements CreateElement<string, {}>
+  implements CreateElement<string, TitleConfig>
 {
   @property()
-  fieldName = "Title";
+  label = "Title";
 
   @query("#title-field")
   titleField!: TextField;
@@ -24,7 +25,7 @@ export class CreateTitle
       <mwc-textfield
         id="title-field"
         outlined
-        .label=${startCase(this.fieldName)}
+        .label=${startCase(this.label)}
         @input=${() => this.dispatchEvent(new Event("change"))}
       ></mwc-textfield>
     `;

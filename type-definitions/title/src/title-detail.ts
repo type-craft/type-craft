@@ -2,13 +2,14 @@ import { DetailElement } from "@type-craft/vocabulary";
 import { html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 import { ScopedElementsMixin } from "@open-wc/scoped-elements";
+import { TitleConfig } from "./config";
 
 export class TitleDetail
   extends ScopedElementsMixin(LitElement)
-  implements DetailElement<string, {}>
+  implements DetailElement<string, TitleConfig>
 {
   @property()
-  fieldName: string;
+  label = "Title";
 
   @property()
   value!: string;
