@@ -6,7 +6,9 @@
     "declaration": true,
     "declarationDir": "dist",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "outDir": "dist",
+    "types": ["node"],
     "incremental": true
   },
   "include": ["src/**/*.ts"],
