@@ -16,7 +16,7 @@
     "test": "npm run build && rimraf tests/.fixture tests/.source-craft && node --loader ts-node/esm --experimental-specifier-resolution=node tests/index.ts"
   },
   "dependencies": {
-    "@source-craft/types": "0.0.1",
+    "@source-craft/types": "0.0.2",
     "ignore": "^5.2.0",
     "lodash-es": "^4.17.21",
     "to-js-identifier": "^1.0.0"

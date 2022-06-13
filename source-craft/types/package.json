@@ -1,6 +1,6 @@
 {
   "name": "@source-craft/types",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Common types to process virtual files and directories as a tree",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
