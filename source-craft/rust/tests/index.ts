@@ -24,7 +24,7 @@ fn main() {
 }
 
 
-fn some_func() {
+fn some_func() -> Option<usize> {
   unimplemented!()
 }`
   );

@@ -5,6 +5,6 @@ fn main() {
 }
 
 
-fn some_func() {
-  5
+fn some_func() -> Option<usize> {
+  Some(5)
 }

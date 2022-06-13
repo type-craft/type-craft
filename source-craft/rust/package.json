@@ -1,6 +1,6 @@
 {
   "name": "@source-craft/rust",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Common utilities to manage rust projects and their source code",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
