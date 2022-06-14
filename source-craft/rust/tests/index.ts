@@ -1,5 +1,5 @@
 import test from "tape";
-import { unimplementFunctions } from "../dist";
+import { replaceFunctionBody } from "../dist";
 import path from "path";
 import { ScDirectory, findByPath, ScFile } from "@source-craft/types";
 import { readFolder } from "@source-craft/fs";
@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 test("unimplement some_func from sample crate", async (t) => {
   const d = readFolder(`${__dirname}/sample`);
 
-  const crate = unimplementFunctions(d, ["some_func"]);
+  const crate = replaceFunctionBody(d, "some_func", "unimplemented!()");
 
   const librs = findByPath(crate, "src/lib.rs") as ScFile;
 
