@@ -1,6 +1,6 @@
 {
   "name": "@type-craft/rust",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Common definitions to generate rust types from TypeCraft types",
   "author": "guillem.cordoba@gmail.com",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@type-craft/vocabulary": "^0.0.3",
-    "@source-craft/rust": "^0.0.1",
+    "@source-craft/rust": "^0.0.5",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
